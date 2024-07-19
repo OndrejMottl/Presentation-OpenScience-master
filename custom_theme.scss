@@ -96,9 +96,15 @@ $heading4Size: 1em;
   background-color: $headingColor;
   color: $backgroundColor;
   text-align: center;
+  $link-color: $color-high-secondary;
 }
 
 .reveal .inverse {
   color: $color-secondary;
   background-color: $color-primary;
+}
+
+.reveal .exercise{
+  background-color: $color-high-secondary;
+  color: $color-secondary;
 }
