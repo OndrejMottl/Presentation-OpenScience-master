@@ -8,7 +8,6 @@ format:
     preview-links: auto
     output-file: "index"
     output-ext: "html"
-    footer: <bit.ly/SSoQE>
 ---
 
 ```{r}
@@ -28,14 +27,7 @@ library(countdown)
 
 ```
 
-## {.title}
-
-::: r-fit-text
-<br>
-
-[Reproducibility in Science]{.bold}
-
-:::
+# [Reproducibility in Science]{.bold .r-fit-text} {.title}
 
 Ondřej Mottl
 
@@ -78,7 +70,15 @@ knitr::include_graphics("materials/openresearch.jpg")
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
 :::
 
-## Open Science
+## [Exercise 1]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+What is Open Science to You?
+:::
+
+`r countdown(minutes = 5)`
+
+# Open Science
 
 ```{r}
 #| label: open-science
@@ -117,13 +117,7 @@ knitr::include_graphics("materials/ReproducibleJourney.jpg")
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
 :::
 
-## {.title}
-
-::: r-fit-text
-
-DATA
-
-:::
+# [DATA]{.bold .r-fit-text} {.title}
 
 ## FAIR Principles
 
@@ -190,29 +184,113 @@ knitr::include_graphics("materials/DOI.jpg")
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
 :::
 
-## {.title}
+# [CODE]{.bold .r-fit-text} {.title}
 
-::: r-fit-text
+## Repoducibility ?
 
-CODE
+:::: columns
+::: {.column width="60%"}
 
-:::
-
-## {.title}
-
-::: r-fit-text
-
-TOOLS
-
-:::
-
-
-## {.title}
-
-::: r-fit-text
-
-Excercise 1
-
-`r countdown(minutes = 15)`
+```{r}
+#| label: meme-work-on-my-machine
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("https://media.makeameme.org/created/one-does-not-50b8331726.jpg")
+```
 
 :::
+
+::: {.column width="40%" .textcenter}
+
+<br>
+<br>
+
+*I was able to reproduce my results on **[my computer/machine]{.text-color-highlight-primary}***
+
+Can I consider my work **[reproducible](..text-color-highlight-secondary)**?
+
+:::
+::::
+
+::: footer
+[makeameme.org](https://media.makeameme.org/created/one-does-not-50b8331726)
+:::
+
+
+## Reproducibility
+
+```{r}
+#| label: reproducibility
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("materials/ReproducibleDefinitionGrid.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Time to change
+
+```{r}
+#| label: culture-shift
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("materials/CultureShift.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## It is a spectrum
+
+```{r}
+#| label: rep-spectrum
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("https://raps-with-r.dev/images/repro_spectrum.png")
+```
+
+::: footer
+[Roger D. Peng ,Reproducible Research in Computational Science.Science334,1226-1227(2011).DOI:10.1126/science.1213847](https://doi.org/10.1126/science.1213847)
+:::
+
+## [Exercise 2]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+How reproducible is your research?
+
+What can you do to improve it?
+:::
+
+`r countdown(minutes = 5)`
+
+## It is a spectrum
+
+```{r}
+#| label: rep-spectrum-details
+#| width: 700
+#| fig-align: 'center'
+knitr::include_graphics("https://www.aalto.fi/sites/g/files/flghsv161/files/styles/o_914w_ah_n_nu/public/2022-02/Glerean_continuum_best_practices1800.png")
+```
+
+::: footer
+[Getting started with reproducibility in research!](https://www.aalto.fi/en/open-science-and-research/getting-started-with-reproducibility-in-research)
+:::
+
+# [TOOLS]{.bold .r-fit-text} {.title}
+
+## Making a paper (compendium)
+
+WIP
+
+Topics to cover: 
+
+ * Project structure
+ * Clean code
+ * Self-containedness
+ * All in code
+ * Version control
+ * Literate programming
+ * Functional programming
