@@ -108,3 +108,8 @@ $heading4Size: 1em;
   background-color: $color-high-secondary;
   color: $color-secondary;
 }
+
+.reveal .blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
