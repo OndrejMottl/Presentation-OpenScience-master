@@ -49,8 +49,6 @@ Ondřej Mottl
 
 ```{r}
 #| label: research cycle
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("ResearchCycle.jpg")
 ```
 
@@ -62,8 +60,6 @@ include_local_figure("ResearchCycle.jpg")
 
 ```{r}
 #| label: reprodicibility crisis
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("1a.png")
 ```
 
@@ -75,8 +71,6 @@ include_local_figure("1a.png")
 
 ```{r}
 #| label: evolution
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("openresearch.jpg")
 ```
 
@@ -96,8 +90,6 @@ What is Open Science to You?
 
 ```{r}
 #| label: open-science
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("UNESCO-Open_science-pillars-en.png")
 ```
 
@@ -109,8 +101,6 @@ include_local_figure("UNESCO-Open_science-pillars-en.png")
 
 ```{r}
 #| label: open-science-taxonomy
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("os_taxonomy.png")
 ```
 
@@ -122,8 +112,6 @@ include_local_figure("os_taxonomy.png")
 
 ```{r}
 #| label: open-science-journey
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("ReproducibleJourney.jpg")
 ```
 
@@ -142,8 +130,6 @@ Good practices for the management and administration of scientific data
 
 ```{r}
 #| label: FAIR
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("FAIRPrinciples.jpg")
 ```
 
@@ -178,8 +164,6 @@ Do you generate data and/or software?
 
 ```{r}
 #| label: DOI
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("DOI.jpg")
 ```
 
@@ -207,8 +191,6 @@ include_local_figure("DOI.jpg")
 
 ```{r}
 #| label: meme-work-on-my-machine
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://media.makeameme.org/created/one-does-not-50b8331726.jpg")
 ```
 
@@ -235,8 +217,6 @@ Can I consider my work **[reproducible]{.text-color-highlight-secondary}**?
 
 ```{r}
 #| label: reproducibility
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("ReproducibleDefinitionGrid.jpg")
 ```
 
@@ -248,8 +228,6 @@ include_local_figure("ReproducibleDefinitionGrid.jpg")
 
 ```{r}
 #| label: culture-shift
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("CultureShift.jpg")
 ```
 
@@ -261,8 +239,6 @@ include_local_figure("CultureShift.jpg")
 
 ```{r}
 #| label: rep-spectrum
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://raps-with-r.dev/images/repro_spectrum.png")
 ```
 
@@ -284,8 +260,6 @@ What can you do to improve it?
 
 ```{r}
 #| label: rep-spectrum-details
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://www.aalto.fi/sites/g/files/flghsv161/files/styles/o_914w_ah_n_nu/public/2022-02/Glerean_continuum_best_practices1800.png")
 ```
 
@@ -293,7 +267,7 @@ knitr::include_graphics("https://www.aalto.fi/sites/g/files/flghsv161/files/styl
 [Getting started with reproducibility in research!](https://www.aalto.fi/en/open-science-and-research/getting-started-with-reproducibility-in-research)
 :::
 
-# [TOOLS]{.bold .r-fit-text} {.title}
+# [PROJECTS]{.bold .r-fit-text} {.title}
 
 ## Making a paper (compendium)
 
@@ -302,8 +276,6 @@ knitr::include_graphics("https://www.aalto.fi/sites/g/files/flghsv161/files/styl
 
 ```{r}
 #| label: compendium
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("ResearchCompendium.jpg")
 ```
 
@@ -329,8 +301,6 @@ Each paper is a single project
 
 ```{r}
 #| label: ProjectDesign
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("ProjectDesign.jpg")
 ```
 
@@ -417,7 +387,7 @@ include_local_figure("ProjectDesign.jpg")
 
 ## [Exercise 3]{.r-fit-text} {.exercise .textcenter}
 
-:::{.r-fit-text}
+::: {.r-fit-text} 
 What are the cons and pros of this approach?
 :::
 
@@ -426,12 +396,10 @@ What are the cons and pros of this approach?
 ## Project structure - Tools 1
 
 :::: columns
-::: {.column width="60%" }
+::: {.column width="60%"}
 
 ```{r}
 #| label: rstudio-project
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rstudio-project.jpg")
 ```
 
@@ -444,6 +412,7 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 
 **[R-studio]{.text-color-highlight-secondary}** is doing it already by default
 :::
+
 ::::
 
 ::: footer
@@ -479,8 +448,6 @@ setwd("C:\Users\jenny\path\that\only\I\have")
 
 ```{r}
 #| label: here-here
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("here_pkg.png")
 ```
 
@@ -499,8 +466,6 @@ Artwork by [@allison_horst](https://twitter.com/allison_horst)
 ::: {.column width="50%" }
 ```{r}
 #| label: ReadableCode
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("ReadableCode.jpg")
 ```
 :::
@@ -509,8 +474,6 @@ include_local_figure("ReadableCode.jpg")
 
 ```{r}
 #| label: wtf-per-minute
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://www.gilesd-j.com/wp-content/uploads/2023/01/image-1.png")
 ```
 
@@ -636,13 +599,13 @@ Create a [Code Convention]{.text-color-highlight-secondary}:
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="60%" .textcenter} 
 ```{r}
 #| label: case
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("case.png")
 ```
+
+Do not use "."(dot) in the object names!
 
 :::
 ::::
@@ -668,8 +631,6 @@ Create a [Code Convention]{.text-color-highlight-secondary}:
 
 ```{r}
 #| label: code-comments
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://i.imgur.com/H4uaq47.jpeg")
 ```
 
@@ -797,8 +758,13 @@ get_standart_concentration <- function(concentration = NULL,
 
 :::::
 
-## Code style and etiquette - Resources {.inverse}
+## 
 
+:::{.textcenter .r-fit-text}
+‼️ BE [CONSISTENT]{.text-color-highlight-secondary .bold} ‼️
+:::
+
+#### Resources 
 * [The {tidyverse} style guide](https://style.tidyverse.org/index.html)
 * [Google’s R Style Guide](https://google.github.io/styleguide/Rguide.html)
 * [Dealing with the Second Hardest Thing in Computer Science](https://indrajeetpatil.github.io/second-hardest-cs-thing/)
@@ -815,16 +781,15 @@ get_standart_concentration <- function(concentration = NULL,
 <br>
 <br>
 
-* Will [my code]{.text-color-highlight-secondary} run on [your]{.text-color-highlight-terciary} machine?
-* Will [my code]{.text-color-highlight-secondary} run [in 10 years]{.text-color-highlight-terciary}?
+Will [my code]{.text-color-highlight-secondary} run on [your]{.text-color-highlight-terciary} machine?
+
+Will [my code]{.text-color-highlight-secondary} run [in 10 years]{.text-color-highlight-terciary}?
 
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="50%" .fragment .textcenter}
 ```{r}
 #| label: renv
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("renv.png")
 ```
 
@@ -846,8 +811,6 @@ What if we share the [whole Operating System]{.text-color-highlight-secondary} a
 
 ```{r}
 #| label: docker_logo
-#| width: 700
-#| fig-align: 'center'
 include_local_figure("docker_logo.png")
 ```
 
@@ -857,8 +820,6 @@ include_local_figure("docker_logo.png")
 
 ```{r}
 #| label: docker_scheme
-#| width: 700
-#| fig-align: 'center'
 knitr::include_graphics("https://www.statworx.com/wp-content/uploads/2019/02/Blog_R-script-in-docker_docker-run-1024x629.png")
 ```
 
@@ -869,11 +830,528 @@ knitr::include_graphics("https://www.statworx.com/wp-content/uploads/2019/02/Blo
 Icon by [icon-icons.com](https://icon-icons.com/icon/docker-official-logo/169250); artwork by [@statworx](https://www.statworx.com/en/)
 :::
 
-## WIP
+## All in code
 
-Topics to cover: 
+:::: columns
+::: {.column width="50%" }
 
- * All in code
- * Version control
- * Literate programming
- * Functional programming
+```{r}
+#| label: tidyverse
+knitr::include_graphics("https://science.uct.ac.za/sites/default/files/content_migration/science_uct_ac_za/708/images/tidy_workflow.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+[Do not edit raw data!]{.bold .text-color-highlight-secondary}
+
+* `Data/Input/Raw/`
+* Data wrangling in code
+* Save proceesed data (`Data/Processed/`)
+* [{tidyverse}](https://www.tidyverse.org/) for data manipulation
+
+:::
+::::
+
+::: footer
+[Centre for Statistics in Ecology, the Environment and Conservation (SEEC)](https://science.uct.ac.za/seec)
+:::
+
+# [Version control]{.bold .r-fit-text} {.title}
+
+## Ring a bell ?
+
+```{r}
+#| label: final-final
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/phd101212s.gif")
+```
+
+## What is Version Control? 🤔
+
+```{r}
+#| label: VersionControl
+include_local_figure("VersionControl.jpg")
+```
+
+::: {.textcenter}
+It is all about [keeping track]{.text-color-highlight-secondary} of [changes]{.text-color-highlight-terciary} 📓✍️
+:::
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Exercise 5 {.exercise .textcenter} 
+
+`r countdown(minutes = 3)`
+
+:::: columns
+
+::: {.column width="50%"}
+
+### Do you recognize some of these questions?
+
+* *It broke … hopefully I have a working version somewhere?*
+* *Can you please send me the latest version?*
+* *Which version are you using?*
+* *Found a bug! Since when was it there?*
+* *I am sure it used to work. When did it change?*
+* *My laptop is gone. Is my thesis now gone?*
+
+:::
+
+::: {.column width="50%" }
+
+### How do you keep track of changes?
+
+```{r}
+#| label: ProjectHistory
+include_local_figure("ProjectHistory.jpg")
+```
+
+:::
+
+::::
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+##
+
+:::: columns
+
+::: {.column width="45%"}
+
+### Git {.textcenter}
+
+* local software
+* keep track of changes of files 
+
+<br>
+
+```{r}
+#| label: git-logo
+#| fig-width: 1
+#| fig-height: 1 
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/768px-Git_icon.svg.png")
+```
+
+:::
+
+::: {.column width="10%" }
+:::
+
+::: {.column width="45%" }
+
+### GitHub {.textcenter}
+
+* host server
+* store (git) the data
+* project management, collaboration, publishing
+
+```{r}
+#| label: github-logo
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/768px-Github-desktop-logo-symbol.svg.png")
+```
+
+:::
+
+::::
+
+## a commit
+
+**Commit** is a [record]{.text-color-highlight-secondary } of a change
+
+If you create or edit a file in your repository and save the changes, you need to [record]{.text-color-highlight-secondary} your change via **commit**
+
+::::: {.fragment}
+
+### Chess analogy? 
+
+:::: columns
+
+::: {.column width="45%"}
+
+```{r}
+#| label: chess
+knitr::include_graphics("https://www.wikihow.com/images/thumb/0/06/Play-Chess-Step-28-Version-5.jpg/aid54279-v4-728px-Play-Chess-Step-28-Version-5.jpg")
+```
+
+:::
+
+::: {.column width="45%" }
+
+**Chess move diary**:
+
+* Bc4 (Bishop to c4)
+* Nf3 (Knight to f3)
+* Qc7 (Queen to c7)
+
+:::
+
+::::
+
+:::::
+
+::: footer
+[wikiHow: How to Play Chess?](https://www.wikihow.com/Play-Chess)
+:::
+
+## a commit
+
+:::: columns
+
+::: {.column width="45%" .textcenter}
+
+```{r}
+#| label: git01
+include_local_figure("git01.png")
+```
+
+*Edit line 32*
+
+:::
+
+::: {.column width="45%" .fragment .textcenter} 
+```{r}
+#| label: git1-chess
+knitr::include_graphics("https://www.wikihow.com/images/thumb/c/c3/Play-Chess-Step-24-Version-5.jpg/aid54279-v4-728px-Play-Chess-Step-24-Version-5.jpg")
+```
+
+*Pawn to d4*
+
+:::
+
+::::
+
+::: footer
+[wikiHow: How to Play Chess?](https://www.wikihow.com/Play-Chess)
+:::
+
+## a commit
+
+<br>
+<br>
+
+```{r}
+#| label: git02
+include_local_figure("git02.png")
+```
+
+## Git/GitHub setup AKA "git hell"
+
+:::: columns
+
+
+
+::: {.column width="45%"}
+
+<br>
+
+::: {.blockquote}
+*Brace yourself for some pain*
+:::
+
+:::
+
+::: {.column width="45%"}
+```{r}
+#| label: ErrorManagement
+include_local_figure("ErrorManagement.jpg")
+```
+:::
+
+::::
+
+### Resources
+
+* [Happy Git and GitHub for the useR](https://happygitwithr.com/install-intro)
+* [biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+* [Building RAP with R: Version control with Git](https://raps-with-r.dev/git.html)
+* [{usethis} tutorial](https://usethis.r-lib.org/articles/usethis-setup.html#install-git)
+* ... and many others
+
+## Basic vocabulary
+
+:::: columns
+
+::: {.column width="40%" .incremental}
+
+ * [R script]{.text-color-highlight-secondary} is a record of code.
+ * [R Project]{.text-color-highlight-secondary} is self contained project/study/paper containg R scripts, data, figures, etc..
+ * Every such project is called [repository]{.text-color-highlight-secondary} (ie a *repo*) 
+ * Your **local** repository is called [local]{.text-color-highlight-secondary}
+ * Your **online** repository, is called [remote]{.text-color-highlight-secondary}
+
+:::
+
+:::{.column width="60%" .fragment}
+```{r}
+#| label: local-remote
+knitr::include_graphics("https://user.oc-static.com/upload/2022/01/04/16412576933806_image30.png")
+```
+:::
+
+::::
+
+::: footer
+[https://openclassrooms.com/](https://openclassrooms.com/en/courses/7476131-manage-your-code-project-with-git-and-github/7681891-work-in-your-local-git-repository)
+::: 
+
+## Git init (project first)
+
+Activate [git]{.text-color-highlight-secondary} for a repo 
+
+::::: {.panel-tabset}
+
+### RStudio
+
+For existing project
+
+```{r}
+#| label: git-init-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::use_git()
+```
+
+Create new project with git tracking
+
+```{r}
+#| label: git-init-rstudio-new
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::create_project("<DIRECTORY>")
+# switch to the new project
+usethis::use_git()
+```
+
+
+### Command line
+
+For existing project
+
+```{bash}
+#| label: git-init-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git init
+```
+
+Create new project with git tracking
+
+```{bash}
+#| label: git-init-cl-new
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git init <DIRECTORY>
+```
+
+### VS Code
+
+Git integration is automatic in [Source control]{.text-color-highlight-secondary} panel
+
+```{r}
+#| label: git-init-vscode
+knitr::include_graphics("https://www.sqlshack.com/wp-content/uploads/2020/07/visual-studio-code-and-git-source-control.png")
+```
+
+### GH Desktop
+
+:::: columns
+
+::: {.column width="60%"}
+
+For existing project
+
+```{r}
+#| label: git-init-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-10757/mw-1440/images/help/desktop/add-local-repository-windows.webp")
+```
+
+:::
+
+::: {.column width="40%"}
+
+Create new project with git tracking
+
+```{r}
+#| label: git-init-GH-new
+knitr::include_graphics("https://docs.github.com/assets/cb-143755/mw-1440/images/help/desktop/lets-get-started.webp")
+```
+
+:::
+
+::::
+
+:::::
+
+::: footer
+[SQLShack](https://www.sqlshack.com/visual-studio-code-vs-code-integration-with-git-source-control/)
+:::
+
+## Git clone (repo first)
+
+Copy (download) for  [remote repo]{.text-color-highlight-secondary} 
+
+::::: {.panel-tabset}
+
+### RStudio
+
+```{r}
+#| label: git-clone-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::create_from_github(
+  repo_spec = "https://github.com/<OWNER>/<REPO>.git",
+  destdir = "<DIRECTORY>"
+  )
+```
+
+### Command line
+
+```{bash}
+#| label: git-colne-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git clone https://github.com/<OWNER>/<REPO>.git <DIRECTORY>
+```
+
+### VS Code
+
+Open [Command Palette]{.text-color-highlight-secondary} (`Ctrl+Shift+p`)
+
+Paste in URL: `"https://github.com/<OWNER>/<REPO>.git"`
+
+### GH Desktop
+
+```{r}
+#| label: git-clone-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-10969/mw-1440/images/help/desktop/clone-file-menu-windows.webp")
+```
+
+:::::
+
+## Staging changes
+
+Make a change to a file and save it. Now *stage* the change:
+
+::::: {.panel-tabset}
+
+### RStudio
+
+:::: columns
+::: {.column width="45%"}
+
+```{r}
+#| label: git-stage-rstudio
+knitr::include_graphics("https://annakrystalli.me/talks/assets/git_tab.png")
+```
+
+:::
+
+::: {.column width="45%"}
+
+* two yellow `??` indicates adding a file 
+* a blue `M` indicates edit a file that has already been committed
+* a red `D` indicates deleting a file
+
+:::
+
+::::
+
+### Command line
+
+```{bash}
+#| label: git-stage-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git add <FILE>
+```
+
+### VS Code
+
+:::: columns
+
+::: {.column width="20%"}
+:::
+
+
+::: {.column width="60%"}
+
+```{r}
+#| label: git-stage-VScode
+knitr::include_graphics("https://code.visualstudio.com/assets/docs/sourcecontrol/overview/stage-changes.png")
+```
+
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
+### GH Desktop
+
+:::: columns
+::: {.column width="45%"}
+
+```{r}
+#| label: git-stage-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-16555/mw-1440/images/help/desktop/commit-all.webp")
+```
+
+:::
+
+::: {.column width="45%"}
+
+* The red icon indicates removed files.
+* The yellow icon indicates modified files.
+* The green icon indicates added files.
+:::
+
+::::
+
+:::::
+
+## a first commit
+
+Commit (record) *staged* changes:
+
+::::: {.panel-tabset}
+
+### RStudio
+
+### Command line
+
+```{bash}
+#| label: git-commit-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git commit -am "commit message"
+```
+
+### VS Code
+
+### GH Desktop
+
+:::::
+
+# [Literate programming]{.bold .r-fit-text} {.title}
+
+# [Functional programming]{.bold .r-fit-text} {.title}
+
+# [Outro]{.bold .r-fit-text} {.title}
+
+## About me
+
