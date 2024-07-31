@@ -397,22 +397,18 @@ What are the cons and pros of this approach?
 
 :::: columns
 ::: {.column width="60%"}
-
 ```{r}
 #| label: rstudio-project
 knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rstudio-project.jpg")
 ```
-
 :::
 
 ::: {.column width="40%" .textcenter}
-
 <br>
 <br>
 
-**[R-studio]{.text-color-highlight-secondary}** is doing it already by default
+[**R-studio**]{.text-color-highlight-secondary} is doing it already by default
 :::
-
 ::::
 
 ::: footer
@@ -423,7 +419,6 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 
 :::: columns
 ::: {.column width="50%" }
-
 <br>
 <br>
 
@@ -445,14 +440,12 @@ setwd("C:\Users\jenny\path\that\only\I\have")
 :::
 
 ::: {.column width="50%" .fragment}
-
 ```{r}
 #| label: here-here
 include_local_figure("here_pkg.png")
 ```
 
 The [{here} package](https://here.r-lib.org/) is up for rescue! 
-
 :::
 ::::
 
@@ -906,8 +899,8 @@ It is all about [keeping track]{.text-color-highlight-secondary} of [changes]{.t
 ### How do you keep track of changes?
 
 ```{r}
-#| label: ProjectHistory
-include_local_figure("ProjectHistory.jpg")
+#| label: version-nightmare
+knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/version-nightmare.png")
 ```
 
 :::
@@ -915,7 +908,7 @@ include_local_figure("ProjectHistory.jpg")
 ::::
 
 ::: footer
-[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+[Reproducible Data Science](https://ecorepsci.github.io/reproducible-science/index.html)
 :::
 
 ##
@@ -962,9 +955,9 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/a/
 
 ## a commit
 
-**Commit** is a [record]{.text-color-highlight-secondary } of a change
+A [**commit**]{.text-color-highlight-terciary} is a [record]{.text-color-highlight-secondary } of a change
 
-If you create or edit a file in your repository and save the changes, you need to [record]{.text-color-highlight-secondary} your change via **commit**
+If you create or edit a file in your repository and save the changes, you need to [record]{.text-color-highlight-secondary} your change via a [**commit**]{.text-color-highlight-terciary}
 
 ::::: {.fragment}
 
@@ -1002,28 +995,23 @@ knitr::include_graphics("https://www.wikihow.com/images/thumb/0/06/Play-Chess-St
 ## a commit
 
 :::: columns
-
-::: {.column width="45%" .textcenter}
-
-```{r}
-#| label: git01
-include_local_figure("git01.png")
-```
-
-*Edit line 32*
-
-:::
-
-::: {.column width="45%" .fragment .textcenter} 
+::: {.column width="45%" .textcenter} 
 ```{r}
 #| label: git1-chess
 knitr::include_graphics("https://www.wikihow.com/images/thumb/c/c3/Play-Chess-Step-24-Version-5.jpg/aid54279-v4-728px-Play-Chess-Step-24-Version-5.jpg")
 ```
 
 *Pawn to d4*
-
 :::
 
+::: {.column width="45%" .textcenter .fragment}
+```{r}
+#| label: git01
+include_local_figure("git01.png")
+```
+
+*Edit line 32 of file A*
+:::
 ::::
 
 ::: footer
@@ -1211,7 +1199,8 @@ Copy (download) for  [remote repo]{.text-color-highlight-secondary}
 #| code-line-numbers: false
 usethis::create_from_github(
   repo_spec = "https://github.com/<OWNER>/<REPO>.git",
-  destdir = "<DIRECTORY>"
+  destdir = "<DIRECTORY>",
+  fork = FALSE
   )
 ```
 
@@ -1239,6 +1228,32 @@ knitr::include_graphics("https://docs.github.com/assets/cb-10969/mw-1440/images/
 ```
 
 :::::
+
+## 3 states of a file 
+
+<br>
+
+:::: columns
+::: {.column width="40%"}
+```{r}
+#| label: git-stage-scheme
+knitr::include_graphics("https://git-scm.com/images/about/index1@2x.png")
+```
+:::
+
+::: {.column width="60%" .fragment}
+```{r}
+#| label: git-stage-draw
+knitr::include_graphics("https://i0.wp.com/jessitron.com/wp-content/uploads/2012/12/27eb8-screenshot2012-12-09at2.07.55pm.png")
+```
+:::
+::::
+
+::: footer
+[git---everything-is-local](https://git-scm.com/)
+
+[jessitron](https://jessitron.com/2012/12/09/git-the-many-parts-five-categories-of-files/)
+:::
 
 ## Staging changes
 
@@ -1331,6 +1346,11 @@ Commit (record) *staged* changes:
 
 ### RStudio
 
+```{r}
+#| label: git-commit-rstudio
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/19_commit_window.png")
+```
+
 ### Command line
 
 ```{bash}
@@ -1343,9 +1363,515 @@ git commit -am "commit message"
 
 ### VS Code
 
+```{r}
+#| label: git-commit-vscode
+knitr::include_graphics("https://code.visualstudio.com/assets/docs/sourcecontrol/intro/scm-staging.png")
+```
+
 ### GH Desktop
 
+:::: columns
+
+::: {.column width="20%"}
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: git-commit-gh
+knitr::include_graphics("https://user-images.githubusercontent.com/359239/43204294-df0e02b8-8ff6-11e8-9a6d-e1ceb6e460e2.png")
+```
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
 :::::
+
+## Dissection of a commit
+
+:::: columns
+
+:::{.column width="60%"}
+```{shell}
+#| label: git-commit-dissection
+#| echo: true
+#| eval: false
+#| code-line-numbers: true
+$ git log --stat
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon <schacon@gee-mail.com>
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    Remove unnecessary test
+
+ lib/simplegit.rb | 5 -----
+ 1 file changed, 5 deletions(-)
+
+commit a11bef06a3f659402fe7563abf99ad00de2209e6
+Author: Scott Chacon <schacon@gee-mail.com>
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    Initial commit
+
+ README           |  6 ++++++
+ Rakefile         | 23 +++++++++++++++++++++++
+ lib/simplegit.rb | 25 +++++++++++++++++++++++++
+ 3 files changed, 54 insertions(+)
+```
+:::
+
+:::{.column width="40%"}
+
+**SHA** - unique identifier
+
+**Author** - who has done this?
+
+**Date** - when was this done?
+
+**Message** - description of what has been done
+
+**Stats** - what has changed?
+
+:::
+
+::::
+
+## Commit message
+
+Commits are **quick** and **cheap**. Therefore:
+
+1. commit [**often** (!)]{.text-color-highlight-secondary} 
+2. provide [**useful**]{.text-color-highlight-secondary} commit messages.
+
+:::: columns
+
+::: {.column width="20%"}
+:::
+
+::: {.column width="60%" .fragment}
+```{r}
+#| label: commit-message
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/20_git_commit.png")
+```
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
+## Commit history
+
+```{r}
+#| label: commit-history
+knitr::include_graphics("https://happygitwithr.com/img/commit-diff-sha-tag.png")
+```
+
+::: footer
+[Happy Git and GitHub for the useR](https://happygitwithr.com/install-intro)
+:::
+
+## [Exercise 6]{.r-fit-text} {.exercise .textcenter}
+
+::: {.r-fit-text} 
+Clone a repo, commit some changes, review history
+:::
+
+`r countdown(minutes = 3)`
+
+## remote
+
+```{r}
+#| label: git-remote
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/0_workflow_git.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## remote
+
+Now we need to *sync* chnages with the [remote]{.text-color-highlight-terciary} using [**PUSH**]{.text-color-highlight-secondary}
+
+
+::::: {.panel-tabset}
+
+### RStudio
+
+Add a remote to existing local repo (only once):
+
+```{r}
+#| label: git-mk-remote-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::use_github(protocol  = "https")
+```
+
+Push local to remote (GitHub):
+
+```{r}
+#| label: git-push-rstudio
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/21_push.png")
+```
+
+### Command line
+
+Add a remote to existing local repo (only once):
+
+```{bash}
+#| label: git-mk-remote-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git remote add origin https://github.com/<OWNER>/<REPO>
+```
+
+Push local to remote (GitHub):
+
+```{bash}
+#| label: git-push-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git push
+```
+
+### VS Code
+
+:::: columns
+::: {.column width="60%"}
+Add a remote to existing local repo (only once):
+```{r}
+#| label: git-mk-remotze-vscode
+knitr::include_graphics("https://code.visualstudio.com/assets/docs/sourcecontrol/intro/remote-repo.png")
+```
+:::
+
+::: {.column width="40%"}
+Push local to remote (GitHub):
+```{r}
+#| label: git-push-vscode
+knitr::include_graphics("https://code.visualstudio.com/assets/docs/sourcecontrol/intro/sync.png")
+```
+:::
+::::
+
+### GH Desktop
+
+:::: columns
+::: {.column width="50%"}
+Add a remote to existing local repo (only once):
+```{r}
+#| label: git--mk-remote-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-54091/mw-1440/images/help/desktop/publish-repository.webp")
+```
+:::
+
+::: {.column width="50%"}
+Push local to remote (GitHub):
+```{r}
+#| label: git-push-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-17787/mw-1440/images/help/desktop/push-to-origin.webp")
+```
+:::
+::::
+
+:::::
+
+## GitHub intermezzo
+
+```{r}
+#| label: github-intermezzo
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/10_new_repo.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## GitHub creating a repo
+
+```{r}
+#| label: gh-mk-repo-new
+include_local_figure("01_new_button.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## GitHub creating a repo
+
+```{r}
+#| label: gh-mk-repo-owner
+include_local_figure("03_owner.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## GitHub creating a repo
+
+```{r}
+#| label: gh-mk-repo-name
+include_local_figure("04_name.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## GitHub creating a repo
+
+```{r}
+#| label: gh-mk-repo-visibility
+include_local_figure("05_visibility.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## GitHub creating a repo
+
+**README** - description of the project
+
+**.gitignore** - list of files ignored by GitHub (more about it later)
+
+**license** - tell other what they can do wit your code
+
+```{r}
+#| label: gh-mk-repo-readme
+include_local_figure("06_readme.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## A note on {usethis}
+
+[{usethis} package](https://usethis.r-lib.org/index.html) provide a lot of usefull helpers
+
+* **README**
+
+```{r}
+#| label: usethis-readme
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::use_readme_md()
+```
+
+* **LICENSE** - [https://choosealicense.com/](https://choosealicense.com/) help on choosing a licence
+
+```{r}
+#| label: usethis-licence
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::use_mit_license(name = "Ondřej Mottl")
+```
+
+* **CONTRIBUTING.md** - guidelines for contributors
+
+```{r}
+#| label: usethis-contributing
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::use_tidy_contributing()
+```
+
+* **CODE_OF_CONDUCT.md** - set the tone for discourse between contributors
+
+```{r}
+#| label: usethis-code-of-conduct
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+usethis::use_code_of_conduct()
+```
+
+## GitHub creating a repo
+
+```{r}
+#| label: gh-mk-repo-final
+include_local_figure("07_final_click.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## `.gitignore` file
+
+A guide to the [git]{.text-color-highlight-secondary} which files [**should be ignored for detecting changes**]{.text-color-highlight-terciary}
+
+Here is an example of a **.gitignore** file:
+```{bash}
+#| label: gitignore
+#| echo: true
+#| eval: false
+#| code-line-numbers: true
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# RStudio files
+.Rproj.user/
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+.Rproj.user
+
+#data (excludes everything in the folder data)
+data/*
+
+# you can make exceptions for specific files
+!data/dragon_taxonomy.csv
+
+#figures & output (excludes all figure files)
+*.png
+*.pdf
+*.jpeg
+```
+
+## update local- PULL 
+
+```{r}
+#| label: git-many-clones
+knitr::include_graphics("https://sfdctechie.wordpress.com/wp-content/uploads/2019/12/github.png")
+```
+
+::: footer
+[sfdc techie – Pavan's blog](https://sfdctechie.wordpress.com/2019/12/27/how-to-add-a-salesforce-dx-project-to-source-control-step-by-step-guide/)
+:::
+
+## update local- PULL 
+
+```{r}
+#| label: git-pull
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittutorial/22_workflow2.png")
+```
+
+::: footer
+[biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
+:::
+
+## update local- PULL 
+
+Now we need to *sync* chnages from the [remote]{.text-color-highlight-terciary} to [local]{.text-color-highlight-terciary} the using [**PULL**]{.text-color-highlight-secondary}
+
+::::: {.panel-tabset}
+
+### RStudio
+
+:::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="70%"}
+Pull from remote (GitHub) to local
+```{r}
+#| label: git-pull-rstudio
+knitr::include_graphics("https://annakrystalli.me/talks/assets/git_tab.png")
+```
+:::
+::::
+
+### Command line
+
+Pull from remote (GitHub) to local:
+
+```{bash}
+#| label: git-pull-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git pull
+```
+
+### VS Code
+
+:::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="70%"}
+Pull from remote (GitHub) to local
+```{r}
+#| label: git-pull-vscode
+include_local_figure("vscode_sync.png")
+```
+:::
+::::
+
+### GH Desktop
+
+:::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="70%"}
+Pull from remote (GitHub) to local
+```{r}
+#| label: git-pull-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-24440/mw-1440/images/help/desktop/pull-button.webp")
+```
+:::
+::::
+
+:::::
+
+## Merge conflict 💩💩💩
+
+A [merge conflict]{.text-color-highlight-secondary} can occur when you are changing the **same line** in one file **differently**.
+
+```{bash}
+#| label: git-mereg-conflict
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+To https://github.com/picardis/myrepo.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/picardis/myrepo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+:::: columns
+
+::: {.column width="50%" .fragment}
+a good strategy to avoid such conflicts: 
+
+* Commit often
+* Work in small steps
+* Push and pull regularly
+* Organize your code in small modules (scripts)
+:::
+
+::: {.column width="50%" .fragment}
+<br>
+
+Merge conflicts cannot always be avoided (but can be mitigated by *branches*; later).
+:::
+::::
+
+## Merge conflict 💩💩💩
+
+
 
 # [Literate programming]{.bold .r-fit-text} {.title}
 
