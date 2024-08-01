@@ -407,7 +407,7 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 <br>
 <br>
 
-[**R-studio**]{.text-color-highlight-secondary} is doing it already by default
+[**R-studio**]{.text-color-highlight-secondary} is using **Projects** already by default
 :::
 ::::
 
@@ -636,6 +636,8 @@ knitr::include_graphics("https://i.imgur.com/H4uaq47.jpeg")
 
 ## Exercise 4 {.exercise}
 
+`r countdown(minutes = 5)`
+
 ::::: {.panel-tabset}
 
 ### Ex1
@@ -711,7 +713,7 @@ list_test %>%
 ### Ex3
 
 :::: columns
-::: {.column width="40%"}
+::: {.column width="30%"}
 
 ```{r}
 #| label: style ex3
@@ -727,7 +729,7 @@ a
 ```
 :::
 
-::: {.column width="60%" .fragment}
+::: {.column width="70%" .fragment}
 ```{r}
 #| label: style ex3 - solution
 #| eval: false
@@ -1394,7 +1396,7 @@ knitr::include_graphics("https://user-images.githubusercontent.com/359239/432042
 :::: columns
 
 :::{.column width="60%"}
-```{shell}
+```{bash}
 #| label: git-commit-dissection
 #| echo: true
 #| eval: false
@@ -1582,7 +1584,9 @@ knitr::include_graphics("https://docs.github.com/assets/cb-17787/mw-1440/images/
 
 :::::
 
-## GitHub intermezzo
+## [GitHub intermezzo]{.r-fit-text} {.inverse .textcenter}
+
+## A GitHub repo
 
 ```{r}
 #| label: github-intermezzo
@@ -1834,10 +1838,23 @@ knitr::include_graphics("https://docs.github.com/assets/cb-24440/mw-1440/images/
 
 ## Merge conflict 💩💩💩
 
+```{r}
+#| label: git-merge-conflict-vis
+knitr::include_graphics("https://www.simplilearn.com/ice9/free_resources_article_thumb/pull-push.JPG")
+```
+
 A [merge conflict]{.text-color-highlight-secondary} can occur when you are changing the **same line** in one file **differently**.
 
+:::footer
+[https://www.simplilearn.com/](https://www.simplilearn.com/tutorials/git-tutorial/merge-conflicts-in-git)
+:::
+
+## Merge conflict 💩💩💩
+
+<br>
+
 ```{bash}
-#| label: git-mereg-conflict
+#| label: git-merge-conflict
 #| echo: true
 #| eval: false
 #| code-line-numbers: false
@@ -1871,7 +1888,561 @@ Merge conflicts cannot always be avoided (but can be mitigated by *branches*; la
 
 ## Merge conflict 💩💩💩
 
+```{bash}
+#| label: git-merge-conflict-example
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+If you have questions, please
+<<<<<<< HEAD
+open an issue
+=======
+ask your question in IRC.
+>>>>>>> branch-a
+```
 
+::: {.fragment}
+
+Delete the unwanted text (including the *decorations*)
+
+```{bash}
+#| label: git-merge-conflict-example-solution
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+If you have questions, please
+ask your question in IRC.
+```
+
+Then **save the file**, **stage**, and **commit** again 
+
+:::
+
+## [Exercise 6]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+Create a merge conflict and fix it
+:::
+
+`r countdown(minutes = 5)`
+
+## Ups! I have made a mistake 😮
+
+How to undo last commit?
+
+[Variant A]{.text-color-highlight-primary}: I commited but **NOT** pushed yet.
+
+::::: {.panel-tabset}
+
+### RStudio
+
+RStudio has a range of possibilities to work with Git and GitHub as shown in this tutorial. The **Terminal** (NOT *console*) has more commands and options and will be handy for trouble shooting.
+
+```{bash}
+#| label: git-undo-commit-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git reset --soft HEAD@{1}
+```
+
+### Command line
+
+```{bash}
+#| label: git-undo-commit-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git reset --soft HEAD@{1}
+```
+
+### VS Code
+
+Open [Command Palette]{.text-color-highlight-secondary} (`Ctrl+Shift+p`)
+
+Write [Git: Undo Last Commit]{.text-color-highlight-terciary}
+
+### GH Desktop
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="70%"}
+```{r}
+#| label: git-undo-commit-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-12506/mw-1440/images/help/desktop/undo-commit.webp")
+```
+:::
+::::
+
+:::::
+
+## Ups! I have made a mistake 😮
+
+How to undo last commit?
+
+[Variant B]{.text-color-highlight-secondary}: I commited but **AND** pushed already.
+
+::::: {.panel-tabset}
+
+### RStudio
+
+We need the **Terminal** (NOT *console*) again.
+
+Copy the **SHA** of the last commit
+
+```{bash}
+#| label: git-reset-commit-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git reset --hard <SHA>
+```
+
+### Command line
+
+Copy the **SHA** of the last commit
+
+```{bash}
+#| label: git-reset-commit-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git reset --hard <SHA>
+```
+
+### VS Code
+
+In the [Source control]{.text-color-highlight-secondary} panel -> **COMMITS** section -> Right-click on the commit you want to revert to -> Select the [Reset Current Branch to Previous Commit]{.text-color-highlight-terciary}
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="60%"}
+```{r}
+#| label: git-reset-commit-VScode
+knitr::include_graphics("https://www.gitkraken.com/wp-content/uploads/2022/03/gitlens-revert-commit-sidebar-1.png")
+```
+:::
+::::
+
+### GH Desktop
+
+Right-click on the commit you would like to revert to and select [Reset to commit]{.text-color-highlight-terciary}.
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="70%"}
+```{r}
+#| label: git-reset-commit-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-130280/mw-1440/images/help/desktop/history-tab-in-commit-sidebar.webp")
+```
+:::
+::::
+
+:::::
+
+## [Branches]{.r-fit-text} {.inverse .textcenter}
+
+## Branches
+
+```{r}
+#| label: git-branches
+knitr::include_graphics("https://miro.medium.com/v2/resize:fit:640/format:webp/1*T4HW6dnJQQz2c2soc4AeFQ.png")
+```
+
+:::footer
+[Git For Dummies](https://nicholas0010.medium.com/git-for-dummies-2-2-2874e625bf65)
+:::
+
+## Branches
+
+```{r}
+#| label: git-branches-funny
+knitr::include_graphics("https://coderefinery.github.io/git-intro/_images/gophers.png")
+```
+
+:::footer
+[coderefinery](https://coderefinery.github.io/git-intro/commits/)
+:::
+
+## Make a branch
+
+::::: {.panel-tabset}
+
+### RStudio
+
+:::: columns
+::: {.column width="70%"}
+```{r}
+#| label: git-make-branch-rstudio
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/fork_branch_tutorial/5_make_new_branch.png")
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+#| label: git-make-branch2-rstudio
+knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/fork_branch_tutorial/6_name_branch.png")
+```
+:::
+::::
+
+### Command line
+
+Copy the **SHA** of the last commit
+
+```{bash}
+#| label: git-make-branch-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git branch <BRANCH-NAME>
+```
+
+### VS Code
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="60%"}
+```{r}
+#| label: git-make-branch-VScode
+knitr::include_graphics("https://code.visualstudio.com/assets/docs/sourcecontrol/intro/scm-create-branch.png")
+```
+:::
+::::
+
+### GH Desktop
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="60%"}
+```{r}
+#| label: git-make-branch-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-26427/mw-1440/images/help/desktop/new-branch-button-mac.webp")
+```
+:::
+::::
+
+:::::
+
+## Switching between branches
+
+The default branch is called [main]{.text-color-highlight-secondary} or [master]{.text-color-highlight-secondary}
+
+! Make sure that you have all changes commited before switching !
+
+::::: {.panel-tabset}
+
+### RStudio
+
+:::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="70%"}
+```{r}
+#| label: git-switch-branch-rstudio
+knitr::include_graphics("https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/img/ChangeBranch.png")
+```
+:::
+::::
+
+### Command line
+
+Copy the **SHA** of the last commit
+
+```{bash}
+#| label: git-switch-branch-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git checkout  <BRANCH-NAME>
+```
+
+### VS Code
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="55%"}
+```{r}
+#| label: git-switch-branch-VScode
+knitr::include_graphics("https://geo-jobe.com/wp-content/uploads/2022/07/CheckoutOrCreateBranch-1.png")
+```
+:::
+::::
+
+### GH Desktop
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="60%"}
+```{r}
+#| label: git-switch-branch-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-38142/mw-1440/images/help/desktop/select-branch-from-dropdown.webp")
+```
+:::
+::::
+
+:::::
+
+## [Exercise 7]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+Make a branch, switch, commit chnages, push 
+:::
+
+`r countdown(minutes = 3)`
+
+## Merging branches
+
+```{r}
+#| label: git-merge-branch-scheme
+knitr::include_graphics("https://media.geeksforgeeks.org/wp-content/uploads/20230516192737/git-three-way-merging.png")
+```
+
+## Merging branches
+
+```{r}
+#| label: git-merge-branch-scheme2
+knitr::include_graphics("https://www.yakuter.com/wp-content/yuklemeler/1_sMJbSt3sLrC-sIsPOVRBdw.png")
+```
+
+## Pull Request (PR)
+
+Request to merge a branch
+
+```{r}
+#| label: git-pull-request-scheme
+knitr::include_graphics("https://crunchify.com/wp-content/uploads/2017/09/Github-WorkFlow-Tips-Crunchify-Tips.png")
+```
+
+## Pull Request - create
+
+After you **push** new branch, you should have a green button [Compare & pull request]{.text-color-highlight-secondary}
+
+```{r}
+#| label: git-pull-request-create
+knitr::include_graphics("https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/img/CreatePullReq.png")
+```
+
+::: footer
+[Aberdeen Study Group](https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/)
+:::
+
+## Pull Request - components
+
+```{r}
+#| label: git-pull-request-componnets
+knitr::include_graphics("https://www.dummies.com/wp-content/uploads/github-open-pull-request.jpg")
+```
+
+::: footer
+[GitHub for dummies](https://www.dummies.com/article/technology/programming-web-design/general-programming-web-design/what-are-github-pull-requests-264741/)
+:::
+
+## Pull Request - Overview
+
+Now you can [more commits]{.text-color-highlight-secondary}, add [Comment]{.text-color-highlight-terciary} to start discussion, or [merge]{.text-color-highlight-primary}
+
+```{r}
+#| label: git-pull-request-overview
+knitr::include_graphics("https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/img/Merge.png")
+```
+
+::: footer
+[Aberdeen Study Group](https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/)
+:::
+
+## Merging strategies
+
+:::: columns
+
+::: {.column width="35%"}
+Merge commit
+```{r}
+#| label: git-merge-strategy-merge
+knitr::include_graphics("https://lukemerrett.com/content/images/2021/08/906613c7-94fb-41a8-9c74-77895dec7f53.png")
+```
+:::
+
+::: {.column width="35%" .fragment}
+Squash & Merge
+```{r}
+#| label: git-merge-strategy-squash
+knitr::include_graphics("https://lukemerrett.com/content/images/2021/08/fa7e8e52-7037-40f9-a1fd-3dcc916d9840.png")
+```
+:::
+
+::: {.column width="30%" .fragment}
+Rebase & Merge
+```{r}
+#| label: git-merge-strategy-rebase
+knitr::include_graphics("https://lukemerrett.com/content/images/2021/08/c44e8334-f187-4386-8946-d7996f883de3.png")
+```
+:::
+
+::::
+
+::: footer
+[Luke Merrett](https://lukemerrett.com/different-merge-types-in-git/)
+:::
+
+## Delete branch
+
+We can delete branch directly on GitHub after merging
+
+```{r}
+#| label: git-pull-request-delete-branch
+knitr::include_graphics("https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/img/DeleteBranch.png")
+```
+
+::: footer
+[Aberdeen Study Group](https://aberdeenstudygroup.github.io/studyGroup/lessons/SG-T1-GitHubVersionControl/VersionControl/)
+:::
+
+## Delete branch
+
+We can also delete branch **before** merging
+
+::::: {.panel-tabset}
+
+### RStudio
+
+We need the **Terminal** (NOT *console*) again.
+
+To delete a [local]{.text-color-highlight-secondary} branch
+
+```{bash}
+#| label: git-delete-branch-local-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git branch -d <BRANCH-NAME>
+```
+
+To delete a [remote]{.text-color-highlight-primary} branch
+
+```{bash}
+#| label: git-delete-branch-remote-rstudio
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git push origin --delete <BRANCH-NAME>
+```
+
+### Command line
+
+To delete a [local]{.text-color-highlight-secondary} branch
+
+```{bash}
+#| label: git-delete-branch-local-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git branch -d <BRANCH-NAME>
+```
+
+To delete a [remote]{.text-color-highlight-primary} branch
+
+```{bash}
+#| label: git-delete-branch-remote-cl
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+git push origin --delete <BRANCH-NAME>
+```
+
+### VS Code
+
+Open [Command Palette]{.text-color-highlight-secondary} (`Ctrl+Shift+p`)
+
+Select [Git: Delete branch ...]{.text-color-highlight-terciary}
+
+### GH Desktop
+
+:::: columns
+:::{.column width="10%"}
+:::
+
+:::{.column width="60%"}
+```{r}
+#| label: git-delete-branch-GH
+knitr::include_graphics("https://docs.github.com/assets/cb-28505/mw-1440/images/help/desktop/delete-branch-win.webp")
+```
+:::
+::::
+
+:::::
+
+## Pull Request - review
+
+A tool to [review]{.text-color-highlight-secondary} suggested changes
+
+```{r}
+#| label: git-pull-request-scheme2
+knitr::include_graphics("https://atlassianblog.wpengine.com/wp-content/uploads/bitbucket411-blog-1200x-branches2.png")
+```
+
+::: footer
+[https://www.atlassian.com/](https://www.atlassian.com/blog/bitbucket/5-pull-request-must-haves)
+:::
+
+## Pull Request - review
+
+On [someone else's PR]{.text-color-highlight-secondary}, you can comment on **individual lines** or **whole files**
+
+```{r}
+#| label: git-pull-request-review
+include_local_figure("5_review.png")
+```
+
+## Merge conflict with branch 💩
+
+Merge conflict with branches is much more pleasant😎
+
+```{r}
+#| label: git-pull-request-review2
+include_local_figure("4_merge_conflict.png")
+```
+
+## Merge conflict with branch 💩
+
+Edit the file as needed
+
+```{r}
+#| label: git-merge-conflic-gh-2
+include_local_figure("5_conflict.png")
+```
+
+## Merge conflict with branch 💩
+
+Commit the changes
+
+```{r}
+#| label: git-merge-conflic-gh-3
+include_local_figure("7_solved.png")
+```
+
+## [Exercise 8]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+Merge a branch
+:::
+
+`r countdown(minutes = 3)`
 
 # [Literate programming]{.bold .r-fit-text} {.title}
 
