@@ -69,23 +69,28 @@ $heading4Size: 1em;
 }
 
 .text-color-primary{
-  color: $color-primary;
+  background-color: $color-primary;
+  color: $white;
 }
 
 .text-color-secondary {
-  color: $color-secondary;
+  background-color: $color-secondary;
+  color: $white;
 }
 
 .text-color-highlight-primary {
-  color: $color-high-primary;
+  background-color: $color-high-primary;
+  color: $white;
 }
 
 .text-color-highlight-secondary {
-  color: $color-high-secondary;
+  background-color: $color-high-secondary;
+  color: $white;
 }
 
 .text-color-highlight-terciary {
-  color: $color-high-terciary;
+  background-color: $color-high-terciary;
+  color: $white;
 }
 
 .textcenter {
