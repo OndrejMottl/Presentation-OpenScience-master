@@ -155,6 +155,17 @@ include_local_figure("FAIRPrinciples.jpg")
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
 :::
 
+## Open vs Close
+
+```{r}
+#| label: open-vs-close
+include_local_figure("open-vs-close-research-with-text.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
 ## Sharing Data
 
 Do you generate data and/or software?
@@ -177,6 +188,17 @@ include_local_figure("DOI.jpg")
 
 :::
 ::::
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Data stewards
+
+```{r}
+#| label: DataStewards
+include_local_figure("DataStewards.jpg")
+```
 
 ::: footer
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
@@ -300,8 +322,8 @@ Each paper is a single project
 ## Project structure
 
 ```{r}
-#| label: ProjectDesign
-include_local_figure("ProjectDesign.jpg")
+#| label: file-management
+include_local_figure("file-management-manual-with-text.jpg")
 ```
 
 ::: footer
@@ -823,6 +845,17 @@ knitr::include_graphics("https://www.statworx.com/wp-content/uploads/2019/02/Blo
 
 ::: footer
 Icon by [icon-icons.com](https://icon-icons.com/icon/docker-official-logo/169250); artwork by [@statworx](https://www.statworx.com/en/)
+:::
+
+## All in code
+
+```{r}
+#| label: code-all-meme
+knitr::include_graphics("https://guangchuangyu.github.io/blog_images/R/meme/Figs/unnamed-chunk-2-1.png")
+```
+
+::: footer
+[create meme in R](https://guangchuangyu.github.io/2017/10/create-meme-in-r/)
 :::
 
 ## All in code
@@ -2409,6 +2442,17 @@ On [someone else's PR]{.text-color-highlight-secondary}, you can comment on **in
 include_local_figure("5_review.png")
 ```
 
+## Pull Request - review
+
+```{r}
+#| label: git-pull-request-add-commets
+knitr::include_graphics("https://www.researchgate.net/profile/Yue-Yu-126/publication/321632407/figure/fig1/AS:569701769191424@1512838894719/Example-comments-on-GitHub_W640.jpg")
+```
+
+::: footer
+[What Are They Talking About? Analyzing Code Reviews in Pull-Based Development Model](http://dx.doi.org/10.1007/s11390-017-1783-2)
+:::
+
 ## Merge conflict with branch 💩
 
 Merge conflict with branches is much more pleasant😎
@@ -2443,6 +2487,118 @@ Merge a branch
 :::
 
 `r countdown(minutes = 3)`
+
+## Bonus for R users
+
+```{r}
+#| label: git-pr-helpers
+knitr::include_graphics("https://www.garrickadenbuie.com/blog/pull-request-flow-usethis/usethis-pr-flow-medium.jpg")
+```
+
+::: footer
+[Pull Request Flow with usethis](https://www.garrickadenbuie.com/blog/pull-request-flow-usethis)
+:::
+
+# [Collaboration]{.bold .r-fit-text} {.title}
+
+[& PROJECT MANAGEMENT]{.bold .r-fit-text}
+
+(via GitHub tools)
+
+## Collaboration
+
+```{r}
+#| label: community-exchange
+include_local_figure("community-exchange.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Collaboration types
+
+```{r}
+#| label: collaboration-types
+include_local_figure("collaboration-types.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Collaboration forms
+
+:::: columns
+:::{.column width="60%"}
+```{r}
+#| label: ResearchTools
+include_local_figure("ResearchTools.jpg")
+```
+:::
+
+::: {.column width="40%"}
+```{r}
+#| label: CommunityNetwork
+include_local_figure("CommunityNetwork.jpg")
+```
+:::
+::::
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Collaborate on a project
+
+```{r}
+#| label: ProjectDesign
+include_local_figure("ProjectDesign.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Project Management
+
+<br>
+<br>
+
+:::: columns
+
+::: {.column width="20%"}
+:::
+
+::: {.column width="60%"}
+[wiki](https://en.wikipedia.org/wiki/Project_management):
+
+::: {.blockquote}
+*[Project management]{.text-color-highlight-primary} is the process of leading work of a team … to achieve all project [goals]{.text-color-highlight-secondary} within the given [constraints]{.text-color-highlight-terciary}*.
+:::
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
+## GitHub tools suite
+
+```{r}
+#| label: GH-project-tools
+knitr::include_graphics("https://github.blog/wp-content/uploads/2022/02/GitHub-Issues-project-planning_banner.png")
+```
+
+::: footer
+[Getting started with project planning on GitHub](https://github.blog/developer-skills/github/getting-started-with-project-planning-on-github/)
+:::
+
+
+## Dissemintation
+
+- Releases
+- How they connect to ZENODO
 
 # [Literate programming]{.bold .r-fit-text} {.title}
 
