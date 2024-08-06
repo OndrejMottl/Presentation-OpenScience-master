@@ -221,26 +221,31 @@ include_local_figure("DataStewards.jpg")
 
 # [CODE]{.bold .r-fit-text} {.title}
 
-## Repoducibility ?
+## Reproducibility ?
 
 :::: columns
 ::: {.column width="60%"}
-
 ```{r}
 #| label: meme-work-on-my-machine
 knitr::include_graphics("https://media.makeameme.org/created/one-does-not-50b8331726.jpg")
 ```
-
 :::
 
-::: {.column width="40%" .textcenter}
+::: {.column width="40%" }
 
 <br>
-<br>
 
-*I was able to reproduce my results on **[my computer/machine]{.text-color-highlight-primary}***
+Uknown author
 
-Can I consider my work **[reproducible]{.text-color-highlight-secondary}**?
+::: {.blockquote}
+::: {.textcenter}
+*I was able to reproduce my results on [my computer/machine]{.text-color-highlight-secondary}*
+:::
+:::
+
+::: {.textcenter}
+Can I consider my work [**reproducible**]{.text-color-highlight-terciary}?
+:::
 
 :::
 ::::
@@ -332,6 +337,17 @@ Each paper is a single project
 
 ::: footer
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Project communication plan
+
+```{r}
+#| label: project-communication
+knitr::include_graphics("https://plan.io/images/blog/project-communication-plan.png?1722938254")
+```
+
+::: footer
+[Plan.io](https://plan.io/blog/)
 :::
 
 ## Project structure
@@ -430,7 +446,7 @@ What are the cons and pros of this approach?
 
 `r countdown(minutes = 3)`
 
-## Project structure - Tools 1
+## Project structure - RStudio Projects
 
 :::: columns
 ::: {.column width="60%"}
@@ -452,7 +468,7 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 [Reproducible Data Science](https://ecorepsci.github.io/reproducible-science/index.html)
 :::
 
-## Project structure - Tools 2
+## Project structure - Working Directory
 
 :::: columns
 ::: {.column width="50%" }
@@ -472,7 +488,7 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 setwd("C:\Users\jenny\path\that\only\I\have")
 ```
 
-*I will come into your office and SET YOUR COMPUTER ON FIRE 🔥*.
+*I will come into your office and **SET YOUR COMPUTER ON FIRE** 🔥*.
 :::
 :::
 
@@ -645,10 +661,11 @@ include_local_figure("meme-code-convention.jpg")
 
 ::: {.column width="60%"}
 
-::: {.blockquote}
-*There are only two hard things in Computer Science: cache invalidation and naming things.*
-:::
 Phil Karlton
+
+::: {.blockquote}
+*There are only two hard things in Computer Science: cache invalidation and **naming things**.*
+:::
 
 :::
 ::::
@@ -672,7 +689,7 @@ Phil Karlton
 include_local_figure("case.png")
 ```
 
-Do not use "."(dot) in the object names!
+[Do not use "."(dot) in the object names!]{.text-color-highlight-terciary}
 
 :::
 ::::
@@ -833,7 +850,7 @@ get_standart_concentration <- function(concentration = NULL,
 ‼️ BE [CONSISTENT]{.text-color-highlight-primary .bold} ‼️
 :::
 
-#### Resources 
+#### Code style Resources 
 * [The {tidyverse} style guide](https://style.tidyverse.org/index.html)
 * [Google’s R Style Guide](https://google.github.io/styleguide/Rguide.html)
 * [Dealing with the Second Hardest Thing in Computer Science](https://indrajeetpatil.github.io/second-hardest-cs-thing/)
@@ -2635,6 +2652,119 @@ include_local_figure("ProjectDesign.jpg")
 
 ::::
 
+## Project Management
+
+```{r}
+#| label: ProjectManagement cyrcle
+knitr::include_graphics("https://plan.io/images/blog/5-phases-of-IT-project-management.png?1722938257")
+```
+
+::: footer
+[Plan.io](https://plan.io/blog/)
+:::
+
+## Tasks management
+
+```{r}
+#| label: tasks-management
+knitr::include_graphics("https://plan.io/images/blog/what-is-task-management.png?1721728085")
+```
+
+::: footer
+[plainio](https://plan.io/blog/what-is-task-management/)
+::: 
+
+## What is a task?
+
+```{r}
+#| label: task-definition
+knitr::include_graphics("https://plan.io/images/blog/what-who-how.png?1722938252")
+```
+
+::: footer
+[plainio](https://plan.io/blog/what-is-task-management/)
+::: 
+
+## Tasks management tools
+
+[Jory MacKay](https://plan.io/blog/what-is-task-management/)
+
+::: {.blockquote}
+*A ... **task management tool** ... is your best friend when it comes to organizing, assigning, tracking, and reporting on tasks.*
+:::
+
+:::: {.columns .fragment}
+
+::: {.column width="20%"}
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: task-management-tools
+knitr::include_graphics("https://plan.io/images/blog/purpose-of-project-schedule.png?1722938242")
+```
+:::
+
+::::
+
+::: footer
+[plainio](https://plan.io/blog/)
+:::
+
+## Best Practices - split tasks
+
+::: {.textcenter}
+### *1. Split yout work into manageble chunks*
+:::
+
+:::: {.columns .fragment}
+
+::: {.column width="20%"}
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: task-management-best-practices-split
+knitr::include_graphics("https://plan.io/images/blog/break-down-projects.png?1721728085")
+```
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
+::: footer
+[plainio](https://plan.io/blog/)
+:::
+
+## Best Practices - priority
+
+::: {.textcenter}
+### *2. Set priority of tasks*
+:::
+
+:::: {.columns .fragment}
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="70%"}
+```{r}
+#| label: task-management-best-practices-prioritise
+knitr::include_graphics("https://plan.io/images/blog/eisenhower-box.png?1721728085")
+```
+:::
+
+::: {.column width="20%"}
+:::
+
+::::
+
+::: footer
+[plainio](https://plan.io/blog/)
+:::
+
 ## GitHub tools suite
 
 ```{r}
@@ -2645,7 +2775,6 @@ knitr::include_graphics("https://github.blog/wp-content/uploads/2022/02/GitHub-I
 ::: footer
 [Getting started with project planning on GitHub](https://github.blog/developer-skills/github/getting-started-with-project-planning-on-github/)
 :::
-
 
 ## Dissemintation
 
