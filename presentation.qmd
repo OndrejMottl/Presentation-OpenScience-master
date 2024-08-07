@@ -2671,7 +2671,7 @@ knitr::include_graphics("https://plan.io/images/blog/what-is-task-management.png
 ```
 
 ::: footer
-[plainio](https://plan.io/blog/what-is-task-management/)
+[Plan.io](https://plan.io/blog/what-is-task-management/)
 ::: 
 
 ## What is a task?
@@ -2682,7 +2682,7 @@ knitr::include_graphics("https://plan.io/images/blog/what-who-how.png?1722938252
 ```
 
 ::: footer
-[plainio](https://plan.io/blog/what-is-task-management/)
+[Plan.io](https://plan.io/blog/what-is-task-management/)
 ::: 
 
 ## Tasks management tools
@@ -2708,14 +2708,12 @@ knitr::include_graphics("https://plan.io/images/blog/purpose-of-project-schedule
 ::::
 
 ::: footer
-[plainio](https://plan.io/blog/)
+[Plan.io](https://plan.io/blog/)
 :::
 
-## Best Practices - split tasks
+## Best Practices
 
-::: {.textcenter}
-### *1. Split yout work into manageble chunks*
-:::
+### [1. Split yout work into manageble chunks]{.text-color-highlight-secondary}
 
 :::: {.columns .fragment}
 
@@ -2723,10 +2721,12 @@ knitr::include_graphics("https://plan.io/images/blog/purpose-of-project-schedule
 :::
 
 ::: {.column width="60%"}
+
 ```{r}
-#| label: task-management-best-practices-split
+#| label: task-mng-best-practices-split
 knitr::include_graphics("https://plan.io/images/blog/break-down-projects.png?1721728085")
 ```
+
 :::
 
 ::: {.column width="20%"}
@@ -2735,14 +2735,33 @@ knitr::include_graphics("https://plan.io/images/blog/break-down-projects.png?172
 ::::
 
 ::: footer
-[plainio](https://plan.io/blog/)
+[Plan.io](https://plan.io/blog/)
 :::
 
-## Best Practices - priority
+## Best Practices
 
-::: {.textcenter}
-### *2. Set priority of tasks*
+### [2. Make your task atomic]{.text-color-highlight-secondary}
+
+It should be clear what is the [**goal**]{.text-color-highlight-primary} and [**criteria**]{.text-color-highlight-terciary} of the task.
+
+<br>
+
+:::: {.columns }
+
+::: {.column width="20%"}
 :::
+
+::: {.column width="60%" .textcenter}
+::: {.blockquote}
+One chunk of work = one task
+:::
+:::
+
+::::
+
+## Best Practices
+
+### [3. Set priority of tasks]{.text-color-highlight-secondary}
 
 :::: {.columns .fragment}
 
@@ -2750,10 +2769,12 @@ knitr::include_graphics("https://plan.io/images/blog/break-down-projects.png?172
 :::
 
 ::: {.column width="70%"}
+
 ```{r}
-#| label: task-management-best-practices-prioritise
+#| label: task-mng-best-practices-prioritise
 knitr::include_graphics("https://plan.io/images/blog/eisenhower-box.png?1721728085")
 ```
+
 :::
 
 ::: {.column width="20%"}
@@ -2762,7 +2783,43 @@ knitr::include_graphics("https://plan.io/images/blog/eisenhower-box.png?17217280
 ::::
 
 ::: footer
-[plainio](https://plan.io/blog/)
+[Plan.io](https://plan.io/blog/)
+:::
+
+## Making a plan
+
+```{r}
+#| label: making-a-plan
+knitr::include_graphics("https://plan.io/images/blog/creating-actionable-project-plans.png?1722938248")
+```
+
+::: footer
+[Plan.io](https://plan.io/blog/)
+:::
+
+## Tools
+
+There are many tools for project management!!!
+
+::::: {.fragment}
+### Google Keep
+
+:::: {.columns}
+
+::: {.column width="20%"}
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: project-management-tools
+knitr::include_graphics("https://www.process.st/wp-content/uploads/2024/02/google-keep-homepage.png")
+```
+:::
+::::
+:::::
+
+::: footer
+[How to Use Google Keep to Create The Ultimate Task List](https://www.process.st/how-to-use-google-keep/)
 :::
 
 ## GitHub tools suite
@@ -2775,6 +2832,12 @@ knitr::include_graphics("https://github.blog/wp-content/uploads/2022/02/GitHub-I
 ::: footer
 [Getting started with project planning on GitHub](https://github.blog/developer-skills/github/getting-started-with-project-planning-on-github/)
 :::
+
+## Issue (a task) on GitHub
+
+## Splitting tasks 
+
+{{< video https://github.githubassets.com/assets/issue-tasks-progress.h264-11908b923684.mp4 width="100%" height="100%" >}}
 
 ## Dissemintation
 
