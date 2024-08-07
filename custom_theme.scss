@@ -9,6 +9,7 @@ $blockMargin: 20px;
 
 // colors
 $black: #000000ff;
+$gray: #808080ff;
 $byzantium: #8f286fff;
 $harvest-gold: #eca400ff;
 $persian-green: #1b998bff;
@@ -115,6 +116,14 @@ $heading4Size: 1em;
 }
 
 .reveal .blockquote {
-  border-left: 3px solid $text-muted;
+  border-left: 6px solid $color-high-primary;
   padding-left: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 25px;
+  border-top: 3px solid $gray;
+  border-bottom: 3px solid $gray;
+  border-right: 3px solid $gray;
+  background-color: $color-secondary;
 }
