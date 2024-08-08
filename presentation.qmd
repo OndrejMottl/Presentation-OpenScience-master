@@ -77,13 +77,13 @@ include_local_figure("openresearch.jpg")
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
 :::
 
-## [Exercise 1]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 :::{.r-fit-text}
 What is Open Science to You?
 :::
 
-`r countdown(minutes = 5)`
+`r countdown(minutes = 3)`
 
 # Open Science
 
@@ -289,7 +289,7 @@ knitr::include_graphics("https://raps-with-r.dev/images/repro_spectrum.png")
 [Roger D. Peng ,Reproducible Research in Computational Science.Science334,1226-1227(2011).DOI:10.1126/science.1213847](https://doi.org/10.1126/science.1213847)
 :::
 
-## [Exercise 2]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 :::{.r-fit-text}
 How reproducible is your research?
@@ -297,7 +297,7 @@ How reproducible is your research?
 What can you do to improve it?
 :::
 
-`r countdown(minutes = 5)`
+`r countdown(minutes = 3)`
 
 ## It is a spectrum
 
@@ -439,7 +439,7 @@ include_local_figure("file-management-manual-with-text.jpg")
 #   └─ [project name].Rproj
 ```
 
-## [Exercise 3]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 ::: {.r-fit-text} 
 What are the cons and pros of this approach?
@@ -726,9 +726,9 @@ knitr::include_graphics("https://i.imgur.com/H4uaq47.jpeg")
 [r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/aatfvz/functional_programming_in_a_nutshell/)
 :::
 
-## Exercise 4 {.exercise}
+## Practical Exercise {.exercise}
 
-`r countdown(minutes = 5)`
+`r countdown(minutes = 3)`
 
 ::::: {.panel-tabset}
 
@@ -980,7 +980,7 @@ It is all about [keeping track]{.text-color-highlight-primary} of [changes]{.tex
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
 :::
 
-## Exercise 5 {.exercise .textcenter} 
+## Practical Exercise {.exercise .textcenter} 
 
 `r countdown(minutes = 3)`
 
@@ -1576,10 +1576,12 @@ knitr::include_graphics("https://happygitwithr.com/img/commit-diff-sha-tag.png")
 [Happy Git and GitHub for the useR](https://happygitwithr.com/install-intro)
 :::
 
-## [Exercise 6]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 ::: {.r-fit-text} 
-Clone a repo, commit some changes, review history
+1. Clone a repo
+2. commit some changes
+3. review history
 :::
 
 `r countdown(minutes = 3)`
@@ -2019,13 +2021,13 @@ Then **save the file**, **stage**, and **commit** again
 
 :::
 
-## [Exercise 6]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 :::{.r-fit-text}
 Create a merge conflict and fix it
 :::
 
-`r countdown(minutes = 5)`
+`r countdown(minutes = 3)`
 
 ## Ups! I have made a mistake 😮
 
@@ -2299,10 +2301,12 @@ knitr::include_graphics("https://docs.github.com/assets/cb-38142/mw-1440/images/
 
 :::::
 
-## [Exercise 7]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 :::{.r-fit-text}
-Make a branch, switch, commit chnages, push 
+1. Make a branch and switch
+2. commit chnages
+3. push 
 :::
 
 `r countdown(minutes = 3)`
@@ -2570,7 +2574,7 @@ Commit the changes
 include_local_figure("7_solved.png")
 ```
 
-## [Exercise 8]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 :::{.r-fit-text}
 Merge a branch
@@ -2619,21 +2623,10 @@ include_local_figure("collaboration-types.jpg")
 
 ## Collaboration forms
 
-:::: columns
-:::{.column width="60%"}
 ```{r}
-#| label: ResearchTools
-include_local_figure("ResearchTools.jpg")
+#| label: Collaboration
+include_local_figure("Collaboration.jpg")
 ```
-:::
-
-::: {.column width="40%"}
-```{r}
-#| label: CommunityNetwork
-include_local_figure("CommunityNetwork.jpg")
-```
-:::
-::::
 
 ::: footer
 [This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
@@ -2856,7 +2849,7 @@ knitr::include_graphics("https://plan.io/images/blog/time-blocking-visualization
 [https://luxafor.com/](https://luxafor.com/pomodoro-technique-time-management-life-hack/) | [Plan.io](https://plan.io/blog/) 
 :::
 
-## [Exercise 9]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
 `r countdown(minutes = 3)`
 
@@ -3041,17 +3034,17 @@ knitr::include_graphics("https://rewind.com/wp-content/uploads/2021/03/G8oAt9b.p
 [Rewind](https://rewind.com/blog/best-practices-for-using-github-issues/)
 :::
 
-## [Exercise 10]{.r-fit-text} {.exercise .textcenter}
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
 
-`r countdown(minutes = 5)`
+`r countdown(minutes = 3)`
 
-:::{.r-fit-text}
+::: {.r-fit-text}
 1. Look up issues on your favourite software (e.g. R package)
 2. Create an issue on your repo
 3. Make a comment
 :::
 
-## TRacking progress - link PRs
+## Tracking progress - link PRs
 
 [Issues]{.text-color-highlight-primary} can be linked to [Pull Requests]{.text-color-highlight-secondary}.
 
@@ -3066,7 +3059,7 @@ knitr::include_graphics("https://github.blog/wp-content/uploads/2020/02/issue-pu
 [GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
 :::
 
-## TRacking progress - link PRs
+## Tracking progress - link PRs
 
 :::: {.columns}
 
@@ -3206,9 +3199,283 @@ There is so much more you can do with [Projects]{.text-color-highlight-primary}:
 
 Check the [official documentation](https://github.com/features/issues)
 
+
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
+
+`r countdown(minutes = 3)`
+
+::: {.r-fit-text}
+1. Make some Issues in your repo
+2. Organise them in a Project
+:::
+
 ## [Additional functions]{.r-fit-text} {.inverse .textcenter}
 
 [of GitHub]{.r-fit-text}
+
+## Discussions
+
+Project-specific space for [communication]{.text-color-highlight-primary} on GitHub.
+
+```{r}
+#| label: GH-discussions
+knitr::include_graphics("https://github.githubassets.com/assets/overview-d34a37d61239.png")
+```
+
+::: footer
+[GitHub Docs](https://github.com/features/discussions)
+:::
+
+## Discussions
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Threads
+
+```{r}
+#| label: GH-discussions-threads
+include_local_figure("gh_dicussion_threads.png")
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+Pools
+
+```{r}
+#| label: GH-discussions-pools
+include_local_figure("gh_dicussion_pools.png")
+```
+
+:::
+
+::::
+
+::: footer
+[GitHub Docs](https://github.com/features/discussions)
+:::
+
+## Discussions
+
+From [Discussions]{.text-color-highlight-primary} to [Issues]{.text-color-highlight-secondary}.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| label: GH-discussions-to-issues
+include_local_figure("gh_dicussion_to_issue_A.png")
+```
+:::
+
+::: {.column width="50%" .fragment}
+
+```{r}
+#| label: GH-discussions-to-issues2
+include_local_figure("gh_dicussion_to_issue_B.png")
+```
+:::
+::::
+
+::: footer
+[GitHub Docs](https://github.com/features/discussions)
+:::
+
+## Wikis
+
+```{r}
+#| label: GH-wiki
+knitr::include_graphics("https://github.blog/wp-content/uploads/2014/05/b6d486e6-d09c-11e3-9fd1-1bc80fb64371.png")
+```
+
+::: footer
+[GitHub Docs](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis)
+:::
+
+## [Practical Exercise]{.r-fit-text .textcenter} {.exercise }
+
+:::{.r-fit-text .textcenter}
+Brainstorm on how you could use Discussions and Wikis in 
+:::
+
+1. your current projects
+2. future projects
+
+`r countdown(minutes = 3)`
+
+## Team administration
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+```{r}
+#| label: ResearchTools
+include_local_figure("ResearchTools.jpg")
+```
+:::
+
+::: {.column width="60%" .fragment}
+
+```{r}
+#| label: GH-team-admin
+knitr::include_graphics("https://nap.nationalacademies.org/openbook/25568/xhtml/images/img-98.jpg")
+```
+:::
+
+::::
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807) | [Mentorship Structures](https://nap.nationalacademies.org/read/25568/chapter/6)
+:::
+
+## Team administration
+
+Github allows you to manage your team by specifying [roles]{.text-color-highlight-primary} and [permissions]{.text-color-highlight-secondary}.
+
+```{r}
+#| label: GH-team-admin-roles
+include_local_figure("GH_team_admin.png")
+```
+
+::: footer
+[GitHub Docs](https://github.com/features/#features-team-administration)
+:::
+
+## Team administration
+
+```{r}
+#| label: GH-team-admin-roles2
+knitr::include_graphics("https://github.blog/wp-content/uploads/2023/08/image2.png")
+```
+
+::: footer
+[Best practices for organizations and teams using GitHub Enterprise Cloud](https://github.blog/enterprise-software/devops/best-practices-for-organizations-and-teams-using-github-enterprise-cloud/)
+:::
+
+## Team administration - Roles
+
+```{r}
+#| label: GH-team-admin-roles3
+knitr::include_graphics("https://cdn.prod.website-files.com/65cb70dea86ef31d62e7ad25/65dc9790deb55bea60f20179_630d23aa00443e4276226ebd_pre-defined_roles_f859b878b8d94a5a98737bd2c66493e2_1000.png")
+```
+
+::: footer
+[GitHub Advanced Security — Secret Scanning](https://www.liatrio.com/resources/blog/github-advanced-security-secret-scanning)
+:::
+
+## Team administration - Mentoring
+
+:::: {.columns}
+
+::: {.column width="35%"}
+```{r}
+#| label: GH-team-admin-roles-teaching
+include_local_figure("CommunityNetwork.jpg")
+```
+:::
+
+::: {.column width="65%" .fragment}
+
+```{r}
+#| label: GH-team-admin-roles-teaching2
+include_local_figure("FirstPullRequest.jpg")
+```
+:::
+
+::::
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+How would you desing a roles for your team/project?
+:::
+
+`r countdown(minutes = 3)`
+
+## Dissemintation
+
+```{r}
+#| label: sharing
+knitr::include_graphics("https://ecdn.teacherspayteachers.com/thumbitem/Sharing-Taking-Turns-Social-Story-Sharing-is-Caring-2116795-1657562183/original-2116795-1.jpg
+")
+```
+
+::: footer
+[https://www.teacherspayteachers.com/](https://www.teacherspayteachers.com/Product/Sharing-Taking-Turns-Social-Story-Sharing-is-Caring-2116795?st=28217229556fa41179351fd430c2ca9c)
+:::
+
+## Dissemintation
+
+```{r}
+#| label: publishing-scheme
+include_local_figure("Ten Simple Rules for Taking Advantage of Git and GitHub.png")
+```
+
+::: footer
+[Ten Simple Rules for Taking Advantage of Git and GitHub](http://dx.doi.org/10.1371/journal.pcbi.1004947)
+:::
+
+## Dissemintation
+
+GitHub uses [git Tag]() and expand on it with [Releases]().
+
+:::: {.columns}
+
+::: {.column width="50%"}
+A [Tag]{.text-color-highlight-primary} is a "frozen" state of repo at a certain time
+
+```{r}
+#| label: git-tag
+knitr::include_graphics("https://miro.medium.com/v2/resize:fit:720/format:webp/1*34EO-6Ra2ath8-p4iBQBRQ.png")
+```
+:::
+
+::: {.column width="50%" .fragment}
+A [Release]{.text-color-highlight-secondary}, based on a [Tag]{.text-color-highlight-primary}, "packs" the whole repo into [downloadable zip]{.text-color-highlight-terciary} (with docs)
+
+```{r}
+#| label: git-release
+knitr::include_graphics("https://github.blog/wp-content/uploads/2021/10/GitHub-new-releases-screenshot.png?resize=1024%2C772?w=1024")
+```
+
+:::
+::::
+
+::: footer
+[Git Tag - All You Need to Know](https://medium.com/@basecs101/git-tag-all-you-need-to-know-latest-be443ae90bb9) | [GitHub Docs](https://github.blog/news-insights/product-news/beta-github-releases-improving-release-experience/)
+
+## Dissemintation - GitHub + ZENODO
+
+Get [DOI]{.text-color-highlight-primary} for your code and data with [Zenodo]{.text-color-highlight-secondary}.
+
+:::: {.columns}
+::: {.column width="20%"}
+
+```{r}
+#| label: zenodo-gh-love
+knitr::include_graphics("https://conservationbytes.com/wp-content/uploads/2021/11/zenodolovesgithub.png")
+```
+:::
+
+::: {.column width="80%"}
+
+```{r}
+#| label: zenodo-gh-love2
+include_local_figure("zenodo-gh.png")
+```
+:::
+
+::::
+
+::: footer
+[Want a permanent DOI assigned to your data and code?](https://conservationbytes.com/2021/11/02/want-a-permanent-doi-assigned-to-your-data-and-code-follow-this-simple-recipe/) | [Zenodo](https://zenodo.org/)
+:::
 
 ## GitHub Actions
 
@@ -3218,19 +3485,33 @@ Create a custom small program that will run on GitHub servers.
 
 ```{r}
 #| label: GH-actions
-knitr::include_graphics("https://github.githubassets.com/assets/actions-workflow-c4f06bca5ec2.svg")
+knitr::include_graphics("https://docs.github.com/assets/cb-25535/mw-1440/images/help/actions/overview-actions-simple.webp")
 ```
 
-## Team administration
+## GitHub Actions
 
-## Discussions
+Usage examples:
 
-## Wikis
+:::: {.columns}
 
-## Dissemintation
+::: {.column width="40%" .incremental}
 
-- Releases
-- How they connect to ZENODO
+* run your script every day (e.g. to update data)
+* run your tests every time you push new code/data
+* render your website every time you update your content
+* ...
+
+:::
+
+::: {.column width="60%" .fragment}
+
+```{r}
+#| label: GH-actions2
+include_local_figure("gh_action_example.png")
+```
+:::
+
+::::
 
 # [Literate programming]{.bold .r-fit-text} {.title}
 
