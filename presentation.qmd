@@ -245,7 +245,7 @@ Uknown author
 :::
 
 ::: {.textcenter}
-Can I consider my work [**reproducible**]{.text-color-highlight-terciary}?
+Can I consider my work [**reproducible**]{.text-color-highlight-tertiary}?
 :::
 
 :::
@@ -548,7 +548,7 @@ Create a [Code Convention]{.text-color-highlight-primary} to keep the code:
 :::
 
 ::: {.fragment}
-Allow for [**collaboration**]{.text-color-highlight-terciary} and [**reproducibility**]{.text-color-highlight-terciary}
+Allow for [**collaboration**]{.text-color-highlight-tertiary} and [**reproducibility**]{.text-color-highlight-tertiary}
 :::
 
 ::: {.fragment}
@@ -605,7 +605,7 @@ include_local_figure("meme-code-convention.jpg")
 
 ::: {.column width="60%" .fragment .textcenter}
 
-[One script = one task]{.text-color-highlight-terciary}
+[One script = one task]{.text-color-highlight-tertiary}
 
 ```{r}
 #| label: Script Structure
@@ -690,7 +690,7 @@ Phil Karlton
 include_local_figure("case.png")
 ```
 
-[Do not use "."(dot) in the object names!]{.text-color-highlight-terciary}
+[Do not use "."(dot) in the object names!]{.text-color-highlight-tertiary}
 
 :::
 ::::
@@ -870,7 +870,7 @@ get_standart_concentration <- function(concentration = NULL,
 
 Will [my code]{.text-color-highlight-primary} run on [your]{.text-color-highlight-secondary} machine?
 
-Will [my code]{.text-color-highlight-primary} run [in 10 years]{.text-color-highlight-terciary}?
+Will [my code]{.text-color-highlight-primary} run [in 10 years]{.text-color-highlight-tertiary}?
 
 :::
 
@@ -1173,8 +1173,8 @@ include_local_figure("ErrorManagement.jpg")
  * [R script]{.text-color-highlight-primary} is a record of code.
  * [R Project]{.text-color-highlight-primary} is self contained project/study/paper containg R scripts, data, figures, etc..
  * Every such project is called [repository]{.text-color-highlight-secondary} (ie a *repo*) 
- * Your **local** repository is called [local]{.text-color-highlight-terciary}
- * Your **online** repository, is called [remote]{.text-color-highlight-terciary}
+ * Your **local** repository is called [local]{.text-color-highlight-tertiary}
+ * Your **online** repository, is called [remote]{.text-color-highlight-tertiary}
 
 :::
 
@@ -1687,7 +1687,7 @@ knitr::include_graphics("https://docs.github.com/assets/cb-17787/mw-1440/images/
 
 :::::
 
-## [GitHub intermezzo]{.r-fit-text} {.inverse .textcenter}
+## [GitHub intermezzo]{.r-fit-text} {.subtitle .textcenter}
 
 ## A GitHub repo
 
@@ -1876,7 +1876,7 @@ knitr::include_graphics("https://biostats-r.github.io/biostats/github/Pics/gittu
 
 ## update local- PULL 
 
-Now we need to *sync* chnages from the [remote]{.text-color-highlight-secondary} to [local]{.text-color-highlight-terciary} the using [**PULL**]{.text-color-highlight-primary}
+Now we need to *sync* chnages from the [remote]{.text-color-highlight-secondary} to [local]{.text-color-highlight-tertiary} the using [**PULL**]{.text-color-highlight-primary}
 
 ::::: {.panel-tabset}
 
@@ -1946,7 +1946,7 @@ knitr::include_graphics("https://docs.github.com/assets/cb-24440/mw-1440/images/
 knitr::include_graphics("https://www.simplilearn.com/ice9/free_resources_article_thumb/pull-push.JPG")
 ```
 
-A [merge conflict]{.text-color-highlight-primary} can occur when you are changing the [same line]{.text-color-highlight-secondary} in one file [differently](.text-color-highlight-terciary).
+A [merge conflict]{.text-color-highlight-primary} can occur when you are changing the [same line]{.text-color-highlight-secondary} in one file [differently](.text-color-highlight-tertiary).
 
 :::footer
 [https://www.simplilearn.com/](https://www.simplilearn.com/tutorials/git-tutorial/merge-conflicts-in-git)
@@ -2033,7 +2033,7 @@ Create a merge conflict and fix it
 
 How to undo last commit?
 
-[Variant A]{.text-color-highlight-primary}: I commited but **NOT** [pushed yet]{.text-color-highlight-terciary}.
+[Variant A]{.text-color-highlight-primary}: I commited but **NOT** [pushed yet]{.text-color-highlight-tertiary}.
 
 ::::: {.panel-tabset}
 
@@ -2063,7 +2063,7 @@ git reset --soft HEAD@{1}
 
 Open [Command Palette]{.text-color-highlight-secondary} (`Ctrl+Shift+p`)
 
-Write [Git: Undo Last Commit]{.text-color-highlight-terciary}
+Write [Git: Undo Last Commit]{.text-color-highlight-tertiary}
 
 ### GH Desktop
 
@@ -2085,7 +2085,7 @@ knitr::include_graphics("https://docs.github.com/assets/cb-12506/mw-1440/images/
 
 How to undo last commit?
 
-[Variant B]{.text-color-highlight-secondary}: I commited but **AND** [pushed already]{.text-color-highlight-terciary}.
+[Variant B]{.text-color-highlight-secondary}: I commited but **AND** [pushed already]{.text-color-highlight-tertiary}.
 
 ::::: {.panel-tabset}
 
@@ -2117,7 +2117,7 @@ git reset --hard <SHA>
 
 ### VS Code
 
-In the [Source control]{.text-color-highlight-secondary} panel -> **COMMITS** section -> Right-click on the commit you want to revert to -> Select the [Reset Current Branch to Previous Commit]{.text-color-highlight-terciary}
+In the [Source control]{.text-color-highlight-secondary} panel -> **COMMITS** section -> Right-click on the commit you want to revert to -> Select the [Reset Current Branch to Previous Commit]{.text-color-highlight-tertiary}
 
 :::: columns
 :::{.column width="10%"}
@@ -2133,7 +2133,7 @@ knitr::include_graphics("https://www.gitkraken.com/wp-content/uploads/2022/03/gi
 
 ### GH Desktop
 
-Right-click on the commit you would like to revert to and select [Reset to commit]{.text-color-highlight-terciary}.
+Right-click on the commit you would like to revert to and select [Reset to commit]{.text-color-highlight-tertiary}.
 
 :::: columns
 :::{.column width="10%"}
@@ -2149,7 +2149,7 @@ knitr::include_graphics("https://docs.github.com/assets/cb-130280/mw-1440/images
 
 :::::
 
-## [Branches]{.r-fit-text} {.inverse .textcenter}
+## [Branches]{.r-fit-text} {.subtitle .textcenter}
 
 ## Branches
 
@@ -2360,7 +2360,7 @@ knitr::include_graphics("https://www.dummies.com/wp-content/uploads/github-open-
 
 ## Pull Request - Overview
 
-Now you can [more commits]{.text-color-highlight-primary}, add [Comment]{.text-color-highlight-secondary} to start discussion, or [merge]{.text-color-highlight-terciary}
+Now you can [more commits]{.text-color-highlight-primary}, add [Comment]{.text-color-highlight-secondary} to start discussion, or [merge]{.text-color-highlight-tertiary}
 
 ```{r}
 #| label: git-pull-request-overview
@@ -2496,7 +2496,7 @@ git push origin --delete <BRANCH-NAME>
 
 Open [Command Palette]{.text-color-highlight-secondary} (`Ctrl+Shift+p`)
 
-Select [Git: Delete branch ...]{.text-color-highlight-terciary}
+Select [Git: Delete branch ...]{.text-color-highlight-tertiary}
 
 ### GH Desktop
 
@@ -2668,7 +2668,7 @@ knitr::include_graphics("https://plan.io/images/blog/project-communication-plan.
 [wiki](https://en.wikipedia.org/wiki/Project_management):
 
 ::: {.blockquote}
-*[Project management]{.text-color-highlight-primary} is the process of leading work of a team … to achieve all project [goals]{.text-color-highlight-secondary} within the given [constraints]{.text-color-highlight-terciary}*.
+*[Project management]{.text-color-highlight-primary} is the process of leading work of a team … to achieve all project [goals]{.text-color-highlight-secondary} within the given [constraints]{.text-color-highlight-tertiary}*.
 :::
 :::
 
@@ -2767,7 +2767,7 @@ knitr::include_graphics("https://plan.io/images/blog/break-down-projects.png?172
 
 ### [2. Make your task atomic]{.text-color-highlight-secondary}
 
-It should be clear what is the [**goal**]{.text-color-highlight-primary} and [**criteria**]{.text-color-highlight-terciary} of the task.
+It should be clear what is the [**goal**]{.text-color-highlight-primary} and [**criteria**]{.text-color-highlight-tertiary} of the task.
 
 <br>
 
@@ -2996,7 +2996,7 @@ Be crateative! You can create your own **labels** based on:
 
 * [priority]{.text-color-highlight-primary}
 * [type]{.text-color-highlight-secondary}
-* [status]{.text-color-highlight-terciary}
+* [status]{.text-color-highlight-tertiary}
 * ...
 :::
 
@@ -3116,7 +3116,7 @@ You can create a Milestone for:
 
 * [Time frame]{.text-color-highlight-primary} - "2024-10-12", "Conference XY", ...
 * [Goal]{.text-color-highlight-secondary} - "Methodology refactor", "paper submission", ...
-* [General topic]{.text-color-highlight-terciary} - "Data cleaning", "Data analysis", ...
+* [General topic]{.text-color-highlight-tertiary} - "Data cleaning", "Data analysis", ...
 
 ## GitHub Projects
 
@@ -3131,7 +3131,7 @@ knitr::include_graphics("https://github.blog/wp-content/uploads/2022/02/GitHub-I
 
 ## GitHub Projects
 
-You can organise your [Issues]{.text-color-highlight-primary} and [Pull Requests]{.text-color-highlight-secondary} in [Projects]{.text-color-highlight-terciary}.
+You can organise your [Issues]{.text-color-highlight-primary} and [Pull Requests]{.text-color-highlight-secondary} in [Projects]{.text-color-highlight-tertiary}.
 
 ```{r}
 #| label: GH-projects
@@ -3149,9 +3149,9 @@ knitr::include_graphics("https://docs.github.com/assets/cb-108386/mw-1440/images
 ::: {.column width="40%"}
 You can customise the [columns]{.text-color-highlight-primary} in [Projects]{.text-color-highlight-secondary} with:
  
-* [Labels]{.text-color-highlight-terciary}
-* [Linked Pull Requests]{.text-color-highlight-terciary}
-* [Milestones]{.text-color-highlight-terciary}
+* [Labels]{.text-color-highlight-tertiary}
+* [Linked Pull Requests]{.text-color-highlight-tertiary}
+* [Milestones]{.text-color-highlight-tertiary}
 * ...
 :::
 
@@ -3194,7 +3194,7 @@ knitr::include_graphics("https://github.githubassets.com/assets/memex-board-dark
 There is so much more you can do with [Projects]{.text-color-highlight-primary}:
 
 * [Automations]{.text-color-highlight-secondary}
-* [Road maps]{.text-color-highlight-terciary}
+* [Road maps]{.text-color-highlight-tertiary}
 * ...
 
 Check the [official documentation](https://github.com/features/issues)
@@ -3209,7 +3209,7 @@ Check the [official documentation](https://github.com/features/issues)
 2. Organise them in a Project
 :::
 
-## [Additional functions]{.r-fit-text} {.inverse .textcenter}
+## [Additional functions]{.r-fit-text} {.subtitle .textcenter}
 
 [of GitHub]{.r-fit-text}
 
@@ -3437,7 +3437,7 @@ knitr::include_graphics("https://miro.medium.com/v2/resize:fit:720/format:webp/1
 :::
 
 ::: {.column width="50%" .fragment}
-A [Release]{.text-color-highlight-secondary}, based on a [Tag]{.text-color-highlight-primary}, "packs" the whole repo into [downloadable zip]{.text-color-highlight-terciary} (with docs)
+A [Release]{.text-color-highlight-secondary}, based on a [Tag]{.text-color-highlight-primary}, "packs" the whole repo into [downloadable zip]{.text-color-highlight-tertiary} (with docs)
 
 ```{r}
 #| label: git-release
