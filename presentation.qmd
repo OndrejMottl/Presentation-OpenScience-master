@@ -8,6 +8,8 @@ format:
     preview-links: auto
     output-file: "index"
     output-ext: "html"
+    code-link: true
+    
 ---
 
 ```{r}
@@ -18,7 +20,8 @@ knitr::opts_chunk$set(
   fig.width = 7,
   fig.height = 5,
   fig.align = "center",
-  out.width = "100%"
+  out.width = "100%",
+  output = TRUE
 )
 
 if (!require("countdown")) install.packages("countdown")
@@ -29,13 +32,22 @@ if (!require("here")) install.packages("here")
 
 library(here)
 
+
+if (!require("tidyverse")) install.packages("tidyverse")
+
+library(tidyverse)
+
+if (!require("palmerpenguins")) install.packages("palmerpenguins")
+
+library(palmerpenguins)
+
 include_local_figure <- function(data_source) {
   knitr::include_graphics(
     path = here::here(
       "materials",
       data_source
     ),
-  error = TRUE
+    error = TRUE
   )
 }
 ```
@@ -224,37 +236,36 @@ include_local_figure("DataStewards.jpg")
 
 ## Reproducibility ?
 
-:::: columns
-::: {.column width="60%"}
+::::: {.columns}
+
+:::: {.column width="60%"}
+
 ```{r}
 #| label: meme-work-on-my-machine
 knitr::include_graphics("https://media.makeameme.org/created/one-does-not-50b8331726.jpg")
 ```
-:::
 
-::: {.column width="40%" }
+::::
+
+:::: {.column width="40%"}
 
 <br>
 
 Uknown author
 
-::: {.blockquote}
-::: {.textcenter}
-*I was able to reproduce my results on [my computer/machine]{.text-color-highlight-secondary}*
-:::
-:::
+::: {.blockquote .textcenter}
 
-::: {.textcenter}
+I was able to reproduce my results on [my computer/machine]{.text-color-highlight-secondary}
+
 Can I consider my work [**reproducible**]{.text-color-highlight-tertiary}?
-:::
 
 :::
 ::::
+:::::
 
 ::: footer
 [makeameme.org](https://media.makeameme.org/created/one-does-not-50b8331726)
 :::
-
 
 ## Reproducibility
 
@@ -285,7 +296,7 @@ include_local_figure("CultureShift.jpg")
 knitr::include_graphics("https://raps-with-r.dev/images/repro_spectrum.png")
 ```
 
-::: footer
+:::{.footer}
 [Roger D. Peng ,Reproducible Research in Computational Science.Science334,1226-1227(2011).DOI:10.1126/science.1213847](https://doi.org/10.1126/science.1213847)
 :::
 
@@ -449,21 +460,13 @@ What are the cons and pros of this approach?
 
 ## Project structure - RStudio Projects
 
-:::: columns
-::: {.column width="60%"}
 ```{r}
 #| label: rstudio-project
 knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rstudio-project.jpg")
 ```
-:::
 
-::: {.column width="40%" .textcenter}
 <br>
-<br>
-
 [**R-studio**]{.text-color-highlight-primary} is using [Projects]{.text-color-highlight-secondary} already by default
-:::
-::::
 
 ::: footer
 [Reproducible Data Science](https://ecorepsci.github.io/reproducible-science/index.html)
@@ -479,7 +482,7 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 [@JennyBryan](https://twitter.com/JennyBryan):
 
 ::: {.blockquote}
-*If the first line of your R script is*
+If the first line of your R script is
 
 ```{r}
 #| label: jenny-quote
@@ -489,11 +492,11 @@ knitr::include_graphics("https://ecorepsci.github.io/reproducible-science/img/rs
 setwd("C:\Users\jenny\path\that\only\I\have")
 ```
 
-*I will come into your office and **SET YOUR COMPUTER ON FIRE** 🔥*.
+I will come into your office and **SET YOUR COMPUTER ON FIRE** 🔥.
 :::
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="48%" .fragment}
 ```{r}
 #| label: here-here
 include_local_figure("here_pkg.png")
@@ -517,7 +520,7 @@ include_local_figure("ReadableCode.jpg")
 ```
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="48%" .fragment}
 
 ```{r}
 #| label: wtf-per-minute
@@ -573,7 +576,7 @@ include_local_figure("meme-code-convention.jpg")
 ## Code style and etiquette 
 
 :::: columns
-::: {.column width="40%"}
+::: {.column width="38%"}
 
 [Code Convention]{.text-color-highlight-secondary}:
 
@@ -593,7 +596,7 @@ include_local_figure("meme-code-convention.jpg")
 ## Code style and etiquette 
 
 :::: columns
-::: {.column width="40%"}
+::: {.column width="38%"}
 
 [Code Convention]{.text-color-highlight-secondary}:
 
@@ -650,7 +653,7 @@ include_local_figure("meme-code-convention.jpg")
 ## Code style and etiquette 
 
 :::: columns
-::: {.column width="40%" }
+::: {.column width="38%" }
 
 [Code Convention]{.text-color-highlight-secondary}:
 
@@ -665,7 +668,7 @@ include_local_figure("meme-code-convention.jpg")
 Phil Karlton
 
 ::: {.blockquote}
-*There are only two hard things in Computer Science: cache invalidation and **naming things**.*
+There are only two hard things in Computer Science: cache invalidation and **naming things**.
 :::
 
 :::
@@ -674,7 +677,7 @@ Phil Karlton
 ## Code style and etiquette 
 
 :::: columns
-::: {.column width="40%" }
+::: {.column width="38%" }
 
 [Code Convention]{.text-color-highlight-secondary}:
 
@@ -702,7 +705,7 @@ Artwork by [@allison_horst](https://twitter.com/allison_horst)
 ## Code style and etiquette 
 
 :::: columns
-::: {.column width="40%" }
+::: {.column width="38%" }
 
 [Code Convention]{.text-color-highlight-secondary}:
 
@@ -735,7 +738,7 @@ knitr::include_graphics("https://i.imgur.com/H4uaq47.jpeg")
 ### Ex1
 
 :::: columns
-::: {.column width="55%"}
+::: {.column width="54%"}
 
 ```{r}
 #| label: style ex1
@@ -769,7 +772,7 @@ days_since_last_accident <- 0
 ### Ex2 
 
 :::: columns
-::: {.column width="40%"}
+::: {.column width="38%"}
 
 ```{r}
 #| label: style ex2
@@ -821,7 +824,7 @@ a
 ```
 :::
 
-::: {.column width="70%" .fragment}
+::: {.column width="69%" .fragment}
 ```{r}
 #| label: style ex3 - solution
 #| eval: false
@@ -874,7 +877,7 @@ Will [my code]{.text-color-highlight-primary} run [in 10 years]{.text-color-high
 
 :::
 
-::: {.column width="50%" .fragment .textcenter}
+::: {.column width="49%" .fragment .textcenter}
 ```{r}
 #| label: renv
 include_local_figure("renv.png")
@@ -894,7 +897,7 @@ Artwork by [@allison_horst](https://twitter.com/allison_horst)
 What if we share the [whole Operating System]{.text-color-highlight-primary} as well?
 
 :::: columns
-::: {.column width="40%" }
+::: {.column width="39%" }
 
 ```{r}
 #| label: docker_logo
@@ -1142,7 +1145,7 @@ include_local_figure("git02.png")
 <br>
 
 ::: {.blockquote}
-*Brace yourself for some pain*
+Brace yourself for some pain
 :::
 
 :::
@@ -1168,7 +1171,7 @@ include_local_figure("ErrorManagement.jpg")
 
 :::: columns
 
-::: {.column width="40%" .incremental}
+::: {.column width="34%" .incremental}
 
  * [R script]{.text-color-highlight-primary} is a record of code.
  * [R Project]{.text-color-highlight-primary} is self contained project/study/paper containg R scripts, data, figures, etc..
@@ -1178,7 +1181,7 @@ include_local_figure("ErrorManagement.jpg")
 
 :::
 
-:::{.column width="60%" .fragment}
+:::{.column width="55%" .fragment}
 ```{r}
 #| label: local-remote
 knitr::include_graphics("https://user.oc-static.com/upload/2022/01/04/16412576933806_image30.png")
@@ -1337,7 +1340,7 @@ knitr::include_graphics("https://docs.github.com/assets/cb-10969/mw-1440/images/
 <br>
 
 :::: columns
-::: {.column width="40%"}
+::: {.column width="29%"}
 ```{r}
 #| label: git-stage-scheme
 knitr::include_graphics("https://git-scm.com/images/about/index1@2x.png")
@@ -2397,7 +2400,7 @@ include_local_figure("Markdown_syntax.png")
 
 :::: columns
 
-::: {.column width="35%"}
+::: {.column width="34%"}
 Merge commit
 ```{r}
 #| label: git-merge-strategy-merge
@@ -2405,7 +2408,7 @@ knitr::include_graphics("https://lukemerrett.com/content/images/2021/08/906613c7
 ```
 :::
 
-::: {.column width="35%" .fragment}
+::: {.column width="34%" .fragment}
 Squash & Merge
 ```{r}
 #| label: git-merge-strategy-squash
@@ -2668,7 +2671,7 @@ knitr::include_graphics("https://plan.io/images/blog/project-communication-plan.
 [wiki](https://en.wikipedia.org/wiki/Project_management):
 
 ::: {.blockquote}
-*[Project management]{.text-color-highlight-primary} is the process of leading work of a team … to achieve all project [goals]{.text-color-highlight-secondary} within the given [constraints]{.text-color-highlight-tertiary}*.
+[Project management]{.text-color-highlight-primary} is the process of leading work of a team … to achieve all project [goals]{.text-color-highlight-secondary} within the given [constraints]{.text-color-highlight-tertiary}.
 :::
 :::
 
@@ -2715,7 +2718,7 @@ knitr::include_graphics("https://plan.io/images/blog/what-who-how.png?1722938252
 [Jory MacKay](https://plan.io/blog/what-is-task-management/)
 
 ::: {.blockquote}
-*A ... **task management tool** ... is your best friend when it comes to organizing, assigning, tracking, and reporting on tasks.*
+A ... **task management tool** ... is your best friend when it comes to organizing, assigning, tracking, and reporting on tasks.
 :::
 
 :::: {.columns .fragment}
@@ -2836,7 +2839,7 @@ knitr::include_graphics("https://luxafor.com/wp-content/uploads/2023/02/the-Pomo
 ```
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="49%" .fragment}
 ```{r}
 #| label: time-blocking
 knitr::include_graphics("https://plan.io/images/blog/time-blocking-visualization.png")
@@ -3000,7 +3003,7 @@ Be crateative! You can create your own **labels** based on:
 * ...
 :::
 
-:::{.column width="65%" .fragment}
+:::{.column width="64%" .fragment}
 ```{r}
 #| label: issue-on-GH-labels2
 include_local_figure("gh_labels.png")
@@ -3240,7 +3243,7 @@ include_local_figure("gh_dicussion_threads.png")
 
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="49%" .fragment}
 Pools
 
 ```{r}
@@ -3262,7 +3265,7 @@ From [Discussions]{.text-color-highlight-primary} to [Issues]{.text-color-highli
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="49%"}
 ```{r}
 #| label: GH-discussions-to-issues
 include_local_figure("gh_dicussion_to_issue_A.png")
@@ -3308,7 +3311,7 @@ Brainstorm on how you could use Discussions and Wikis in
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="39%"}
 
 ```{r}
 #| label: ResearchTools
@@ -3369,7 +3372,7 @@ knitr::include_graphics("https://cdn.prod.website-files.com/65cb70dea86ef31d62e7
 
 :::: {.columns}
 
-::: {.column width="35%"}
+::: {.column width="34%"}
 ```{r}
 #| label: GH-team-admin-roles-teaching
 include_local_figure("CommunityNetwork.jpg")
@@ -3427,16 +3430,17 @@ GitHub uses [git Tag]() and expand on it with [Releases]().
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 A [Tag]{.text-color-highlight-primary} is a "frozen" state of repo at a certain time
 
 ```{r}
 #| label: git-tag
 knitr::include_graphics("https://miro.medium.com/v2/resize:fit:720/format:webp/1*34EO-6Ra2ath8-p4iBQBRQ.png")
 ```
+
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column width="45%" .fragment}
 A [Release]{.text-color-highlight-secondary}, based on a [Tag]{.text-color-highlight-primary}, "packs" the whole repo into [downloadable zip]{.text-color-highlight-tertiary} (with docs)
 
 ```{r}
@@ -3445,10 +3449,12 @@ knitr::include_graphics("https://github.blog/wp-content/uploads/2021/10/GitHub-n
 ```
 
 :::
+
 ::::
 
 ::: footer
 [Git Tag - All You Need to Know](https://medium.com/@basecs101/git-tag-all-you-need-to-know-latest-be443ae90bb9) | [GitHub Docs](https://github.blog/news-insights/product-news/beta-github-releases-improving-release-experience/)
+:::
 
 ## Dissemintation - GitHub + ZENODO
 
@@ -3477,6 +3483,7 @@ include_local_figure("zenodo-gh.png")
 [Want a permanent DOI assigned to your data and code?](https://conservationbytes.com/2021/11/02/want-a-permanent-doi-assigned-to-your-data-and-code-follow-this-simple-recipe/) | [Zenodo](https://zenodo.org/)
 :::
 
+
 ## GitHub Actions
 
 Automate your works🤖!
@@ -3494,7 +3501,7 @@ Usage examples:
 
 :::: {.columns}
 
-::: {.column width="40%" .incremental}
+::: {.column width="35%" .incremental}
 
 * run your script every day (e.g. to update data)
 * run your tests every time you push new code/data
@@ -3513,9 +3520,965 @@ include_local_figure("gh_action_example.png")
 
 ::::
 
-# [Literate programming]{.bold .r-fit-text} {.title}
-
 # [Functional programming]{.bold .r-fit-text} {.title}
+
+## What is a `function` in R?
+
+<br>
+
+::: {.blockquote}
+A function is a block of code which only runs when it is called.
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: basic-function-example
+#| echo: true
+mean(x = c(1, 2, 3, 4, 5))
+```
+:::
+
+::: {.fragment}
+```{r}
+#| label: basic-function-example2
+#| echo: true
+#| eval: false
+function (x, trim = 0, na.rm = FALSE, ...) 
+{
+    if (!is.numeric(x) && !is.complex(x) && !is.logical(x)) {
+        warning("argument is not numeric or logical: returning NA")
+        return(NA_real_)
+    }
+    if (isTRUE(na.rm)) 
+        x <- x[!is.na(x)]
+    if (!is.numeric(trim) || length(trim) != 1L) 
+        stop("'trim' must be numeric of length one")
+    n <- length(x)
+    if (trim > 0 && n) {
+        if (is.complex(x)) 
+            stop("trimmed means are not defined for complex data")
+        if (anyNA(x)) 
+            return(NA_real_)
+        if (trim >= 0.5) 
+            return(stats::median(x, na.rm = FALSE))
+        lo <- floor(n * trim) + 1
+        hi <- n + 1 - lo
+        x <- sort.int(x, partial = unique(c(lo, hi)))[lo:hi]
+    }
+    .Internal(mean(x))
+}
+```
+:::
+
+## Parameters / Arguments
+
+<br>
+
+::: {.blockquote}
+You can pass data, known as parameters/arguments, into a function.
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: basic-param-example
+#| echo: true
+seq(
+  from = 1,
+  to = 10,
+  by = 2
+)
+```
+:::
+
+## Arguments matching
+
+```{r}
+#| label: argument-matching-1
+#| echo: true
+# create some data
+mydata <- rnorm(100)
+```
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: argument-matching-2
+#| echo: true
+sd(mydata)
+```
+:::
+
+::: {.fragment}
+```{r}
+#| label: argument-matching-3
+#| echo: true
+sd(x = mydata)
+```
+:::
+
+::: {.fragment}
+```{r}
+#| label: argument-matching-4
+#| echo: true
+sd(x = mydata, na.rm = FALSE)
+```
+:::
+
+::: {.fragment}
+```{r}
+#| label: argument-matching-5
+#| echo: true
+sd(na.rm = FALSE, x = mydata)
+```
+:::
+
+::: {.fragment}
+```{r}
+#| label: argument-matching-6
+#| echo: true
+sd(na.rm = FALSE, mydata)
+```
+:::
+
+## Creating a function - reason
+
+```{r}
+#| label: create-function-reason-1
+#| echo: true
+a <- rnorm(5)
+b <- rnorm(5)
+c <- rnorm(5)
+d <- rnorm(5)
+```
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: create-function-reason-2
+#| echo: true
+#| eval: false
+(a - min(a)) / (max(a) - min(a))
+(b - min(b)) / (max(b) - min(b))
+(c - min(c)) / (max(c) - min(c))
+(d - min(d)) / (max(d) - min(d))  
+```
+:::
+
+<br>
+
+::: {.fragment}
+
+```{r}
+#| label: create-function-reason-3
+#| echo: true
+#| eval: false
+(█ - min(█)) / (max(█) - min(█))
+```
+:::
+
+::: {.fragment}
+If you have to repeat the **same code** [more than twice]{.text-color-highlight-primary}, it is a good idea to create a [function]{.text-color-highlight-secondary}.
+:::
+
+## Creating a function
+
+```{r}
+#| label: create-function
+#| eval: false
+#| echo: true
+my_function <- function(<arguments>) {
+  ## Do something interesting
+}
+```
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: create-function-example
+#| echo: true
+rescale_to_01 <- function(x) {
+  (x - min(x)) / (max(x) - min(x))
+}
+```
+:::
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: create-function-example2
+#| echo: true
+rescale_to_01(c(-10, 0, 10))
+```
+:::
+
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+1. What are your experiences with making functions?
+2. How can we improve the function `rescale_to_01`?
+:::
+
+```{r}
+#| label: create-function-exercise
+#| echo: true
+rescale_to_01 <- function(x) {
+  (x - min(x)) / (max(x) - min(x))
+}
+```
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: create-function-exercise2
+#| echo: true
+rescale_to_01 <- function(x) {
+  x_range <- 
+    range(x, na.rm = TRUE, finite = TRUE)
+  res <- 
+    (x - x_range[1]) / (x_range[2] - x_range[1])
+  return(res)
+}
+```
+:::
+
+`r countdown(minutes = 3)`
+
+## Functionals
+
+```{r}
+#| label: functional-meme
+include_local_figure("functional_meme.png")
+```
+
+::: footer
+[https://www.reddit.com/r/ProgrammerHumor/](https://www.reddit.com/r/ProgrammerHumor/comments/a5ggzi/functions/)
+:::
+
+
+## Functionals
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+A [functional]{.text-color-highlight-primary} is a [function]{.text-color-highlight-secondary} that 
+
+::: {.incremental}
+* takes a [function]{.text-color-highlight-secondary} as an **input** 
+* and returns a [vector]{.text-color-highlight-terciary} as **output**
+:::
+
+:::
+
+::: {.column width="45%" .fragment}
+```{r}
+#| label: functional-programming
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/1dff819e743f280bbab1c55f8f063e60b6a0d2fb/2269e/diagrams/fp.png")
+```
+:::
+::::
+
+<br>
+
+::: {.fragment}
+Bjarne Stroustrup: 
+
+::: {.blockquote}
+To become significantly more reliable, code must become more transparent. In particular, nested conditions and loops must be viewed with great suspicion. Complicated control flows confuse programmers. Messy code often hides bugs.
+:::
+:::
+
+::: footer
+[Advanced R](https://adv-r.hadley.nz/fp.html)
+:::
+
+## {purrr} package
+
+```{r}
+#| label: purrr-package
+knitr::include_graphics("https://purrr.tidyverse.org/logo.png")
+```
+
+::: footer
+[purrr.tidyverse.org](https://purrr.tidyverse.org/)
+:::
+
+## `purrr::map()`
+
+```{r}
+#| label: purrr-map-vis
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/f0494d020aa517ae7b1011cea4c4a9f21702df8b/2577b/diagrams/functionals/map.png")
+```
+
+::: footer
+[Advanced R](https://adv-r.hadley.nz/functionals.html)
+:::
+
+## `purrr::map()` - name?
+
+Why `map()`?
+
+::: {.fragment}
+From Math:
+
+::: {.blockquote}
+an operation that associates each element of a given set with one or more elements of a second set
+:::
+:::
+
+## `purrr::map()`
+
+```{r}
+#| label: purrr-map-example-1
+#| echo: true
+add_1 <- function(x){
+  return(x + 1)
+} 
+
+```
+
+<br>
+
+::: {.fragment}
+
+```{r}
+#| label: purrr-map-example-2
+#| echo: true
+purrr::map(
+  .x = 1:3, 
+  .f = add_1
+  )
+```
+:::
+
+## `purrr::map()`
+
+`purrr::map()` returns list. There are other variants `purrr::map` that return different types of objects.
+
+* `purrr::map_dbl()` returns a numeric vector
+* `purrr::map_chr()` returns a character vector
+* `purrr::map_lgl()` returns a logical vector
+* `purrr::map_int()` returns an integer vector
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: purrr-map-example-3
+#| echo: true
+purrr::map_dbl(
+  .x = 1:3, 
+  .f = add_1
+  )
+```
+:::
+
+## `purrr::map()`
+
+```{r}
+# | label: purrr-map-vis-2
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/12f6af8404d9723dff9cc665028a35f07759299d/d0d9a/diagrams/functionals/map-list.png")
+```
+
+::: footer
+[Advanced R](https://adv-r.hadley.nz/functionals.html)
+:::
+
+## `purrr::map()`
+
+```{r}
+#| label: purrr-map-example-4
+#| echo: true
+my_list <-
+  list(
+    x = rnorm(5),
+    y = rnorm(5),
+    z = rnorm(5)
+  ) 
+```
+
+<br>
+
+::: {.fragment}
+
+```{r}
+#| label: purrr-map-example-5
+#| echo: true
+purrr::map_dbl(
+  .x = my_list, 
+  .f = mean
+  )
+```
+:::
+
+## `purrr::map()` - Anonymous functions
+
+```{r}
+#| label: purrr-map-anon-1
+#| echo: true
+get_length_of_unique <- function(x){
+  unique(x)  %>% 
+    length()  %>% 
+    return()
+}
+
+purrr::map_dbl(
+  .x = mtcars, 
+  .f = get_length_of_unique
+  )
+```
+
+<br>
+
+::: {.fragment}
+The magic of `~` ([tilde operator]{.text-color-highlight-primary}):
+
+```{r}
+#| label: purrr-map-anon-2
+#| echo: true
+purrr::map_dbl(
+  .x = mtcars,
+  .f = ~ unique(.x) %>%
+    length()
+)
+```
+:::
+
+## `purrr::map()` - Anonymous functions
+
+Tilde can be also used to combine custom and base functions.
+
+```{r}
+#| label: purrr-map-anon-3
+#| echo: true
+purrr::map_dbl(
+  .x = list(
+    x = rnorm(5),
+    y = rnorm(5),
+    z = rnorm(5)
+  ),
+  .f = ~ add_1(.x) %>%
+    mean()
+)
+```
+
+## Functional workflow - example
+
+The data will be using Palmer's `penguins` dataset.
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+```{r}
+#| label: purrr-advanced-data
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/reference/figures/palmerpenguins.png")
+```
+
+:::
+
+::: {.column width="65%"}
+
+```{r}
+#| label: purrr-advanced-data2
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png")
+```
+:::
+
+::::
+
+::: footer
+[Palmer penguins dataset](https://allisonhorst.github.io/palmerpenguins/)
+:::
+
+## Functional workflow - example
+
+```{r}
+#| label: purrr-advanced-data3
+#| echo: true
+library(palmerpenguins)
+head(penguins)
+```
+
+## Functional workflow - example
+
+The goal is to plot the relationship between `bill_length_mm` and `bill_depth_mm` for each species.
+
+```{r}
+#| label: purrr-advanced-data4
+knitr::include_graphics("https://allisonhorst.github.io/palmerpenguins/reference/figures/culmen_depth.png")
+```
+
+::: footer
+[Palmer penguins dataset](https://allisonhorst.github.io/palmerpenguins/)
+:::
+
+## Functional workflow - example
+
+```{r}
+#| label: purrr-advanced
+#| echo: true
+data_penguins_by_species <-
+  penguins %>%
+  tidyr::nest(data_nested = -species)
+```
+
+<br>
+
+::: {.fragment}
+```{r}
+#| label: purrr-advanced2
+#| echo: true
+print(data_penguins_by_species)
+```
+:::
+
+## Functional workflow - example {auto-animate="true"}
+
+```{r}
+#| label: purrr-advanced3
+#| echo: true
+data_penguins_by_species_lm <-
+  data_penguins_by_species %>%
+  dplyr::mutate(
+    model = purrr::map(
+      .x = data_nested,
+      .f = ~ stats::lm(bill_length_mm ~ bill_depth_mm, data = .x)
+    )
+  )
+```
+
+## Functional workflow - example {auto-animate="true"}
+
+```{r}
+#| label: purrr-advanced4
+#| echo: true
+data_penguins_by_species_lm <-
+  data_penguins_by_species %>%
+  dplyr::mutate(
+    model = purrr::map(
+      .x = data_nested,
+      .f = ~ stats::lm(bill_length_mm ~ bill_depth_mm, data = .x)
+    ),
+    model_coef = purrr::map(
+      .x = model,
+      .f = ~ stats::coef(.x)
+    )
+  )
+```
+
+## Functional workflow - example {auto-animate="true"}
+
+```{r}
+#| label: purrr-advanced5
+#| echo: true
+data_penguins_by_species_lm <-
+  data_penguins_by_species %>%
+  dplyr::mutate(
+    model = purrr::map(
+      .x = data_nested,
+      .f = ~ stats::lm(bill_length_mm ~ bill_depth_mm, data = .x)
+    ),
+    model_coef = purrr::map(
+      .x = model,
+      .f = ~ stats::coef(.x)
+    ),
+    plot = purrr::map2(
+      .x = data_nested,
+      .y = model_coef,
+      .f = ~ ggplot2::ggplot(
+        data = .x,
+        mapping = ggplot2::aes(x = bill_depth_mm, y = bill_length_mm)
+      ) +
+        ggplot2::geom_point() +
+        ggplot2::geom_abline(
+          intercept = .y[[1]],
+          slope = .y[[2]],
+          col = "red"
+        ) +
+        ggplot2::coord_cartesian(
+           xlim = range(penguins$bill_depth_mm, na.rm = TRUE),
+          ylim = range(penguins$bill_length_mm, na.rm = TRUE)
+        ) 
+    )
+  )
+```
+
+## Functional workflow - example
+
+```{r}
+#| label: purrr-advanced6
+#| echo: true
+print(data_penguins_by_species_lm)
+```
+
+<br>
+
+::: {.fragment}
+
+```{r}
+#| label: purrr-advanced7
+#| echo: true
+#| fig.height: 2
+ggpubr::ggarrange(
+  plotlist = data_penguins_by_species_lm$plot,
+  labels = data_penguins_by_species_lm$species,
+  ncol = 3
+)
+```
+
+:::
+
+## Functional workflow - example 
+
+Figure with a single call.
+
+```{r}
+#| label: purrr-advanced8
+#| echo: true
+#| eval: false
+fig_penguins_beak_lm <-
+ penguins %>%
+  tidyr::nest(data_nested = -species)
+  dplyr::mutate(
+    model = purrr::map(
+      .x = data_nested,
+      .f = ~ stats::lm(bill_length_mm ~ bill_depth_mm, data = .x)
+    ),
+    model_coef = purrr::map(
+      .x = model,
+      .f = ~ stats::coef(.x)
+    ),
+    plot = purrr::map2(
+      .l = list(
+        data_nested,
+        model_coef,
+        species
+      ),
+      .f = ~ ggplot2::ggplot(
+        data = ..1,
+        mapping = ggplot2::aes(x = bill_depth_mm, y = bill_length_mm)
+      ) +
+        ggplot2::geom_point() +
+        ggplot2::geom_abline(
+          intercept = ., 2[[1]],
+          slope = ..2[[2]],
+          col = "red"
+        ) +
+        ggplot2::coord_cartesian(
+           xlim = range(penguins$bill_depth_mm, na.rm = TRUE),
+          ylim = range(penguins$bill_length_mm, na.rm = TRUE)
+        ) +
+        ggplot2::labs(
+          title = ..3
+        )
+    )
+  ) %>%
+  purrr::chuck("plot") %>%
+  ggpubr::ggarrange(
+    plotlist = .,
+    ncol = 3
+  )
+```
+
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+1. What are your experiences with Functional programming?
+2. What are the advantages?
+3. What are the limitations?
+:::
+
+::: {.r-fit-text .fragment}
+bonus: What was statisically incorrect in the example?
+::: 
+
+`r countdown(minutes = 3)`
+
+## [Functional project]{.r-fit-text} {.subtitle .textcenter}
+
+## Functional project
+
+We wrote a very usefull function that loads and cleans a csv file.
+
+```{r}
+#| label: f-project-reason-fc_example
+#| echo: true
+#| eval: false
+load_and_clean_csv <- function(file_name){
+  data <- 
+    readr::read_csv(file = file_name) %>%
+    janitor::clean_names()
+}
+```
+
+## Functional project
+
+```{r}
+#| eval: false
+#| echo: true
+# .
+# └─my_awesome_project/
+#   ├─ Data/
+#   |   ├─ Input/
+#   |   |  └─ vegetation.csv
+#   |   └─ Processed/
+#   ├─ R/
+#   |   ├─ 01_Estimate_diversity.R
+#   |   └─ 02_Fit_diversity_model.R
+```
+
+:::: {.columns}
+
+::: {.column width="49%" .fragment}
+```{r}
+#| label: f-project-reason-diversity-1
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|5-9"
+# 01_Estimate_diversity.R:
+# <Header>
+
+# define helper function
+load_and_clean_csv <- function(file_name){
+  data <- 
+    readr::read_csv(file = file_name) %>%
+    janitor::clean_names()
+}
+
+# load data
+data_vegetation_lowlands <- 
+  load_and_clean_csv("Data/Input/vegetation_lowlands.csv")
+
+data_vegetation_highlands <- 
+  load_and_clean_csv("Data/Input/vegetation_highlands.csv")
+
+# <Estimate diversity> ...
+```
+
+:::
+
+::: {.column width="50%" .fragment}
+```{r}
+#| label: f-project-reason-model-1
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|5-9"
+# 02_Fit_diversity_model.R:
+# <Header>
+
+# define helper function
+load_and_clean_csv <- function(file_name){
+  data <- 
+    readr::read_csv(file = file_name) %>%
+    janitor::clean_names()
+}
+
+# load data
+data_diversity_lowlands <- 
+  load_and_clean_csv("Data/Processed/diversity_lowlands.csv")
+
+data_diversity_highlands <-
+  load_and_clean_csv("Data/Processed/diversity_highlands.csv")
+
+# <Fit models> ...
+```
+:::
+::::
+
+## Functional project
+
+Now we want to edit the function to also include {here} package.
+
+::: {.fragment}
+
+```{r}
+#| label: f-project-reason-fc_example2
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|3"
+load_and_clean_csv <- function(file_name){
+  data <- 
+    here::here(file_name) %>%
+    readr::read_csv(file = .) %>%
+    janitor::clean_names()
+}
+```
+:::
+
+::: {.fragment}
+We would need to edit the function in [every]{.text-color-highlight-primary} script!!
+:::
+
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+How would you solve the problem with the function?
+:::
+
+`r countdown(minutes = 3)`
+
+## Functional project
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|11"
+# .
+# └─my_awesome_project/
+#   ├─ Data/
+#   |   ├─ Input/
+#   |   |  └─ vegetation.csv
+#   |   └─ Processed/
+#   ├─ R/
+#   |   ├─ 01_Estimate_diversity.R
+#   |   └─ 02_Fit_diversity_model.R
+#   |   └─ Functions/
+#   |       └─ load_and_clean_csv.R
+```
+
+:::: {.columns}
+
+::: {.column width="49%"}
+```{r}
+#| label: f-project-reason-diversity-2
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|4-8"
+# 01_Estimate_diversity.R:
+# <Header>
+
+source(
+  here::here(
+    "R/Functions/load_and_clean_csv.R"
+    )
+)
+
+# load data
+data_vegetation_lowlands <- 
+  load_and_clean_csv("Data/Input/vegetation_lowlands.csv")
+
+data_vegetation_highlands <- 
+  load_and_clean_csv("Data/Input/vegetation_highlands.csv")
+
+# <Estimate diversity> ...
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: f-project-reason-model-2
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|4-8"
+# 02_Fit_diversity_model.R:
+# <Header>
+
+source(
+  here::here(
+    "R/Functions/load_and_clean_csv.R"
+    )
+)
+
+# load data
+data_diversity_lowlands <- 
+  load_and_clean_csv("Data/Processed/diversity_lowlands.csv")
+
+data_diversity_highlands <-
+  load_and_clean_csv("Data/Processed/diversity_highlands.csv")
+
+# <Fit models> ...
+```
+:::
+::::
+
+## Functional project 
+
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|8,12-14"
+# .
+# └─my_awesome_project/
+#   ├─ Data/
+#   |   ├─ Input/
+#   |   |  └─ vegetation.csv
+#   |   └─ Processed/
+#   ├─ R/
+#   |   ├─ 00_Config_file.R
+#   |   ├─ 01_Estimate_diversity.R
+#   |   └─ 02_Fit_diversity_model.R
+#   |   └─ Functions/
+#   |       ├─ fit_linear_model.R
+#   |       ├─ load_and_clean_csv.R
+#   |       └─ plot_regression.R
+```
+
+:::: {.columns}
+
+::: {.column width="49%"}
+```{r}
+#| label: f-project-reason-diversity-3
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|4-6"
+# 01_Estimate_diversity.R:
+# <Header>
+
+source(
+  here::here("00_Config_file.R")
+)
+
+# load data
+data_vegetation_lowlands <- 
+  load_and_clean_csv("Data/Input/vegetation_lowlands.csv")
+
+data_vegetation_highlands <- 
+  load_and_clean_csv("Data/Input/vegetation_highlands.csv")
+
+# <Estimate diversity> ...
+```
+
+:::
+
+::: {.column width="50%"} 
+```{r}
+#| label: f-project-reason-model-3
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|4-6"
+# 02_Fit_diversity_model.R:
+# <Header>
+
+source(
+  here::here("00_Config_file.R")
+)
+
+# load data
+data_diversity_lowlands <- 
+  load_and_clean_csv("Data/Processed/diversity_lowlands.csv")
+
+data_diversity_highlands <-
+  load_and_clean_csv("Data/Processed/diversity_highlands.csv")
+
+# <Fit models> ...
+```
+:::
+::::
+
+## [{targets} package]{.r-fit-text} {.subtitle .textcenter}
+
+# [Literate programming]{.bold .r-fit-text} {.title}
 
 # [Outro]{.bold .r-fit-text} {.title}
 
