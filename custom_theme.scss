@@ -196,6 +196,7 @@ h2, .reveal h2 {
 
 /* Blockquote */
 .reveal .blockquote {
+  font-style: italic;
   border-left: 6px solid $color-high-primary;
   padding: $smallMargin;
   border-radius: 25px;
@@ -208,8 +209,8 @@ h2, .reveal h2 {
 
 /* Code block */
 code {
-  background-color: darken($backgroundColor, 10%);
-  padding: 3px;
+  background-color: darken($backgroundColor, 20%);
+  padding: $smallMargin;
   border-radius: 5px;
 }
 
