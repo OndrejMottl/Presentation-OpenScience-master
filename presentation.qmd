@@ -4974,3 +4974,45 @@ targets::tar_visnetwork(
 
 ## About me
 
+:::: {.columns}
+
+::: {.column width="25%"}
+```{r}
+#| label: personal sticker
+include_local_figure("Ondrej_Mottl-transparent-shadow.png")
+```
+
+```{r}
+#| label: linktree QR
+include_local_figure("qr_linktree.png")
+```
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="62%"}
+[Ondřej Mottl]{.bold .r-fit-text .text-color-primary}
+Assistant Professor at [Charles University](https://cuni.cz/UK-1.html)
+<br>
+
+* 📧 Ondrej.mottl(at)gmail.com
+* 🐦 [@OndrejMottl](https://twitter.com/OndrejMottl)
+* 🐱 [Github](https://github.com/OndrejMottl)
+* 🆔 [ORCID](https://orcid.org/0000-0002-9796-5081)
+* 🌐 [Personal webpage](https://ondrejmottl.github.io/)
+* 🧑‍💻 [Laboratory of Quantitative Ecology](https://ondrejmottl.github.io/lab/about_the_lab.html)
+:::
+
+::::
+
+## [This presentation]{.bold .r-fit-text} {.title}
+
+::: {.r-fit-text}
+[😸 Code on GitHub](https://github.com/OndrejMottl/Presentation-OpenScience-master/)
+
+[🖥️ Slides](https://ondrejmottl.github.io/Presentation-OpenScience-master/)
+:::
+
+
+
