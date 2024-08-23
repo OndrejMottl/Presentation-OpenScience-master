@@ -4968,7 +4968,40 @@ targets::tar_visnetwork(
 
 `r countdown(minutes = 3)`
 
-# [Literate programming]{.bold .r-fit-text} {.title}
+# [Literate programming - WIP]{.bold .r-fit-text} {.title}
+
+## Literate programming
+
+```{r}
+#| label: documentation
+include_local_figure("documentation.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Literate programming
+
+```{r}
+#| label: Pandoc
+include_local_figure("Pandoc.jpg")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## Literate programming
+
+```{r}
+#| label: rmarkdown
+include_local_figure("rmarkdown.png")
+```
+
+::: footer
+Artwork by [@allison_horst](https://twitter.com/allison_horst)
+:::
 
 # [Outro]{.bold .r-fit-text} {.title}
 
