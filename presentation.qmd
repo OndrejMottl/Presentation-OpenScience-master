@@ -9,7 +9,6 @@ format:
     output-file: "index"
     output-ext: "html"
     code-link: true
-    
 ---
 
 ```{r}
@@ -4215,9 +4214,10 @@ We wrote a very usefull function that loads and cleans a csv file.
 #| echo: true
 #| eval: false
 load_and_clean_csv <- function(file_name){
-  data <- 
-    readr::read_csv(file = file_name) %>%
-    janitor::clean_names()
+  file_name  %>% 
+    readr::read_csv(file = .) %>%
+    janitor::clean_names()  %>% 
+    return()
 }
 ```
 
@@ -4230,7 +4230,8 @@ load_and_clean_csv <- function(file_name){
 # └─my_awesome_project/
 #   ├─ Data/
 #   |   ├─ Input/
-#   |   |  └─ vegetation.csv
+#   |   |  ├─ vegetation_lowlands.csv
+#   |   |  └─ vegetation_highlands.csv
 #   |   └─ Processed/
 #   ├─ R/
 #   |   ├─ 01_Estimate_diversity.R
@@ -4250,9 +4251,10 @@ load_and_clean_csv <- function(file_name){
 
 # define helper function
 load_and_clean_csv <- function(file_name){
-  data <- 
-    readr::read_csv(file = file_name) %>%
-    janitor::clean_names()
+  file_name  %>% 
+    readr::read_csv(file = .) %>%
+    janitor::clean_names()  %>% 
+    return()
 }
 
 # load data
@@ -4278,9 +4280,10 @@ data_vegetation_highlands <-
 
 # define helper function
 load_and_clean_csv <- function(file_name){
-  data <- 
-    readr::read_csv(file = file_name) %>%
-    janitor::clean_names()
+  file_name  %>% 
+    readr::read_csv(file = .) %>%
+    janitor::clean_names()  %>% 
+    return()
 }
 
 # load data
@@ -4307,8 +4310,8 @@ Now we want to edit the function to also include {here} package.
 #| eval: false
 #| code-line-numbers: "|3"
 load_and_clean_csv <- function(file_name){
-  data <- 
-    here::here(file_name) %>%
+  file_name  %>% 
+    here::here() %>%
     readr::read_csv(file = .) %>%
     janitor::clean_names()
 }
@@ -4332,12 +4335,13 @@ How would you solve the problem with the function?
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "|11"
+#| code-line-numbers: "|12"
 # .
 # └─my_awesome_project/
 #   ├─ Data/
 #   |   ├─ Input/
-#   |   |  └─ vegetation.csv
+#   |   |  ├─ vegetation_lowlands.csv
+#   |   |  └─ vegetation_highlands.csv
 #   |   └─ Processed/
 #   ├─ R/
 #   |   ├─ 01_Estimate_diversity.R
@@ -4407,12 +4411,13 @@ data_diversity_highlands <-
 ```{r}
 #| eval: false
 #| echo: true
-#| code-line-numbers: "|8,12-14"
+#| code-line-numbers: "|9,13-15"
 # .
 # └─my_awesome_project/
 #   ├─ Data/
 #   |   ├─ Input/
-#   |   |  └─ vegetation.csv
+#   |   |  ├─ vegetation_lowlands.csv
+#   |   |  └─ vegetation_highlands.csv
 #   |   └─ Processed/
 #   ├─ R/
 #   |   ├─ 00_Config_file.R
@@ -4476,7 +4481,492 @@ data_diversity_highlands <-
 :::
 ::::
 
-## [{targets} package]{.r-fit-text} {.subtitle .textcenter}
+## [Reproducible pipeline]{.r-fit-text} {.subtitle .textcenter}
+
+## Reproducible pipeline/workflow
+
+```{r}
+#| label: reproducible-pipeline
+include_local_figure("what-is-a-workflow.png")
+```
+
+::: footer
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
+
+## {targets} package
+
+```{r}
+#| label: targets-package
+knitr::include_graphics("https://docs.ropensci.org/targets/logo.svg")
+```
+
+::: footer
+[targets package](https://docs.ropensci.org/targets/)
+:::
+
+## Example pipeline
+
+<br>
+
+::: {.fragment}
+```{mermaid}
+flowchart LR
+    A(Load data) --> B(Fit model)
+    B --> C(Plot results)
+```
+:::
+
+## Example pipeline 
+
+:::: {.columns}
+
+::: {.column width="33%"}
+```{mermaid}
+flowchart LR
+    A(Load data)
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_load_1
+#| echo: true
+#| eval: false
+#| output: false
+# 01_Load_and_clean_data.R:
+# <Header>
+library(tidyverse)
+library(palmerpenguins)
+library(janitor)
+
+# load and clean
+data_penguins_clean <-
+  palmerpenguins::path_to_file("penguins_raw.csv")  %>% 
+  readr:::read_csv()  %>%
+  janitor::clean_names()
+
+# check data
+dplyr::glimpse(data_penguins_clean)
+
+# Save data
+data_penguins_clean  %>% 
+  readr::write_csv(
+    here::here("penguins_clean.csv")
+  )
+```
+:::
+
+:::
+
+::: {.column width="33%"}
+```{mermaid}
+flowchart LR
+    B(Fit model)
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_fit_1
+#| echo: true
+#| eval: false
+# 02_Fit_model.R:
+# <Header>
+library(tidyverse)
+
+# load data
+data_penguins_clean <-
+  readr::read_csv(
+    here::here("penguins_clean.csv")
+  )
+
+# fit model
+mod_penguins <-
+  stats::lm(
+    culmen_length_mm ~ culmen_depth_mm,
+    data = data_penguins_clean
+    )
+
+# save results
+mod_penguins  %>% 
+  readr::write_rds(
+    here::here("penguins_mod.rds")
+  )
+```
+:::
+:::
+
+::: {.column width="33%"}
+```{mermaid}
+flowchart LR
+    C(Plot results)
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_plot_1
+#| echo: true
+#| eval: false
+# 03_Plot_results.R:
+# <Header>
+library(tidyverse)
+
+# load data
+mod_penguins <-
+  readr::read_rds(
+    here::here("penguins_mod.rds")
+  )
+
+# make plot
+fig_penguins <-
+  ggplot2::fortify(mod_penguins) %>%
+  ggplot2::ggplot(
+    mapping = ggplot2::aes(
+      x = culmen_depth_mm,
+      y = culmen_length_mm
+    )
+  ) +
+  ggplot2::geom_point() +
+  ggplot2::geom_line(
+    mapping = ggplot2::aes(
+      y = .fitted
+    ),
+    col = "red"
+  )
+
+# save plot
+ggplot2::ggsave(
+  plot = fig_penguins,
+  filename = here::here("penguins_plot.png")
+  )
+```
+:::
+:::
+::::
+
+## Example pipeline - using {targets}
+
+```{r}
+#| label: targets_ex_pipeline_1
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|8-10|12-14|16-18|"
+# _targest.R:
+# <Header>
+library(tidyverse)
+library(palmerpenguins)
+library(janitor)
+
+list(
+  targets::tar_target(
+    name = "data_penguins_clean",
+    command = load_and_clean_data("penguins_raw.csv")
+  ),
+  targets::tar_target(
+    name = "mod_penguins",
+    command = fit_model(data_penguins_clean)
+  ),
+  targets::tar_target(
+    name = "fig_penguins",
+    command = plot_results(mod_penguins)
+  )
+)
+```
+
+```{r}
+#| label: targets_ex_pipeline_1_real
+#| echo: false
+#| eval: true
+#| output: false
+temp_script <-
+  paste0(
+    tempdir(),
+     "/penguins_target.R"
+     )
+  
+targets::tar_script(
+  script = temp_script,
+  code = {
+    suppressPackageStartupMessages(
+      {
+        library(tidyverse)
+        library(palmerpenguins)
+        library(janitor)
+      }
+    )
+
+    load_and_clean_data <- function(file_name) {
+      palmerpenguins::path_to_file(file_name) %>%
+        readr::read_csv(
+          .,
+          show_col_types = FALSE) %>%
+        janitor::clean_names() %>%
+        return()
+    }
+
+    fit_model <- function(data_source) {
+      stats::lm(
+        culmen_length_mm ~ culmen_depth_mm,
+        data = data_source
+      ) %>%
+        return()
+    }
+
+    plot_results <- function(model) {
+      ggplot2::fortify(model) %>%
+        ggplot2::ggplot(
+          mapping = ggplot2::aes(
+            x = culmen_depth_mm,
+            y = culmen_length_mm
+          )
+        ) +
+        ggplot2::geom_point() +
+        ggplot2::geom_line(
+          mapping = ggplot2::aes(
+            y = .fitted
+          ),
+          col = "red"
+        ) %>%
+        return()
+    }
+
+    list(
+      targets::tar_target(
+        name = "data_penguins_clean",
+        command = load_and_clean_data("penguins_raw.csv")
+      ),
+      targets::tar_target(
+        name = "mod_penguins",
+        command = fit_model(data_penguins_clean)
+      ),
+      targets::tar_target(
+        name = "fig_penguins",
+        command = plot_results(mod_penguins)
+      )
+    )
+  },
+  ask = FALSE
+)
+
+# make sure that there is no previous target
+targets::tar_destroy(
+  script = temp_script,
+  verbose = FALSE,
+  ask = FALSE
+)
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_pipeline_2
+#| echo: true
+#| eval: false
+targets::tar_make()
+```
+
+```{r}
+#| label: targets_ex_pipeline_2_real
+#| echo: false
+#| eval: true
+#| output: true
+targets::tar_make(
+  script = temp_script
+)
+```
+:::
+
+## Example pipeline - using {targets}
+
+```{r}
+#| label: targets_ex_pipeline_3
+#| echo: true
+#| eval: false
+targets::tar_visnetwork()
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_pipeline_3_real
+#| echo: false
+#| eval: true
+#| output: true
+targets::tar_visnetwork(
+   script = temp_script
+     )
+```
+:::
+
+## Example pipeline - using {targets} {auto-animate="true"}
+
+Now edit the `fit_model()` function.
+
+```{r}
+#| label: targets_ex_pipeline_4
+#| echo: true
+#| eval: false
+# fit_model.R:
+# <Header>
+fit_model <- function(data_source) {
+      stats::lm(
+        culmen_length_mm ~ culmen_depth_mm,
+        data = data_source
+      ) %>%
+        return()
+    }
+```
+
+## Example pipeline - using {targets} {auto-animate="true"}
+
+Now edit the `fit_model()` function.
+
+```{r}
+#| label: targets_ex_pipeline_4b
+#| echo: true
+#| eval: false
+#| code-line-numbers: "4,7"
+# fit_model.R:
+# <Header>
+fit_model <- function(data_source) {
+      stats::glm(
+        culmen_length_mm ~ culmen_depth_mm,
+        data = data_source,
+        family = stats::Gamma(link = "log")
+      ) %>%
+        return()
+    }
+```
+
+## Example pipeline - using {targets} 
+
+```{r}
+#| label: targets_ex_pipeline_5
+#| echo: true
+#| eval: false
+targets::tar_visnetwork()
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_pipeline_5_real
+#| echo: false
+#| eval: true
+#| output: true
+targets::tar_script(
+  script = temp_script,
+  code = {
+    suppressPackageStartupMessages(
+      {
+        library(tidyverse)
+        library(palmerpenguins)
+        library(janitor)
+      }
+    )
+
+    load_and_clean_data <- function(file_name) {
+      palmerpenguins::path_to_file(file_name) %>%
+        readr::read_csv(
+          .,
+          show_col_types = FALSE) %>%
+        janitor::clean_names() %>%
+        return()
+    }
+
+    fit_model <- function(data_source) {
+      stats::glm(
+        culmen_length_mm ~ culmen_depth_mm,
+        data = data_source,
+        family = stats::Gamma(link = "log")
+      ) %>%
+        return()
+    }
+
+    plot_results <- function(model) {
+      ggplot2::fortify(model) %>%
+        ggplot2::ggplot(
+          mapping = ggplot2::aes(
+            x = culmen_depth_mm,
+            y = culmen_length_mm
+          )
+        ) +
+        ggplot2::geom_point() +
+        ggplot2::geom_line(
+          mapping = ggplot2::aes(
+            y = .fitted
+          ),
+          col = "red"
+        ) %>%
+        return()
+    }
+
+    list(
+      targets::tar_target(
+        name = "data_penguins_clean",
+        command = load_and_clean_data("penguins_raw.csv")
+      ),
+      targets::tar_target(
+        name = "mod_penguins",
+        command = fit_model(data_penguins_clean)
+      ),
+      targets::tar_target(
+        name = "fig_penguins",
+        command = plot_results(mod_penguins)
+      )
+    )
+  },
+  ask = FALSE
+)
+
+targets::tar_visnetwork(
+   script = temp_script
+   )
+```
+:::
+
+## Example pipeline - using {targets} 
+
+```{r}
+#| label: targets_ex_pipeline_6
+#| echo: true
+#| eval: false
+targets::tar_make()
+```
+
+```{r}
+#| label: targets_ex_pipeline_6_real
+#| echo: false
+#| eval: true
+#| output: true
+targets::tar_make(
+  script = temp_script
+)
+```
+
+::: {.fragment}
+```{r}
+#| label: targets_ex_pipeline_7
+#| echo: true
+#| eval: false
+targets::tar_visnetwork()
+```
+
+```{r}
+#| label: targets_ex_pipeline_7_real
+#| echo: false
+#| eval: true
+#| output: true
+targets::tar_visnetwork(
+   script = temp_script
+     )
+```
+:::
+
+## [Practical Exercise]{.r-fit-text} {.exercise .textcenter}
+
+:::{.r-fit-text}
+1. What are your experiences with {targets} package?
+2. Compare the pipeline with script-based aproach.
+:::
+
+`r countdown(minutes = 3)`
 
 # [Literate programming]{.bold .r-fit-text} {.title}
 
