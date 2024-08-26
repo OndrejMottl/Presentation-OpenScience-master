@@ -1137,34 +1137,22 @@ include_local_figure("git02.png")
 
 ## Git/GitHub setup AKA "git hell"
 
-:::: columns
 
-::: {.column width="45%"}
-
-<br>
-
-::: {.blockquote}
-Brace yourself for some pain
-:::
-
-:::
-
-::: {.column width="45%"}
 ```{r}
 #| label: ErrorManagement
 include_local_figure("ErrorManagement.jpg")
 ```
+
+Follow instructions in [Version Control - git hell](https://ondrejmottl.github.io/VersionControl_gitHell/) (a separate presentation).
+
+::: {.blockquote}
+Getting all the necessary software installed, configured, and playing nicely together is honestly half the battle ... **Brace yourself for some pain**
 :::
 
-::::
-
-### Resources
-
-* [Happy Git and GitHub for the useR](https://happygitwithr.com/install-intro)
-* [biostats: Version control with GitHub and RStudio](https://biostats-r.github.io/biostats/github/1_Git_Tutorial.html)
-* [Building RAP with R: Version control with Git](https://raps-with-r.dev/git.html)
-* [{usethis} tutorial](https://usethis.r-lib.org/articles/usethis-setup.html#install-git)
-* ... and many others
+::: footer
+[Happy Git and GitHub for the useR](https://happygitwithr.com/install-intro) |
+[This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence](https://zenodo.org/doi/10.5281/zenodo.3332807)
+:::
 
 ## Basic vocabulary
 
